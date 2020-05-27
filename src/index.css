@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#App {
+    display: table;
+    #border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    background-color: #21232d;
+}
+
+#App > div {
+    display: table-row;
+}
+
+#TopRow {
+    height: 200px;
+}
+
+#Corner,#Left {
+    width: 200px;
+}
+
+#App > div > div {
+    display: table-cell;
+    #border: 4px solid #595965;
+    box-shadow:inset 0px 0px 0px 4px #595965;
+    padding: 12px;
+}
+
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}
+
+.tab-content {
+    color: #fff;
+}
