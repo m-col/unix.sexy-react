@@ -8,7 +8,7 @@ import './index.css';
 
 
 export default function Windows() {
-  let positions = useSelector(selectPositions);
+  const positions = useSelector(selectPositions);
   const dispatch = useDispatch();
 
 	return (
