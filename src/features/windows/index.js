@@ -1,26 +1,29 @@
 import React from 'react';
 import { Rnd } from 'react-rnd';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { selectWindowCount } from './slice';
+import { selectPositions, dragWindow, resizeWindow } from './slice';
 import './index.css';
 
 
 
 export default function Windows() {
-  const windowCount = useSelector(selectWindowCount);
-	let arr = Array.from({length: windowCount});
+  let positions = useSelector(selectPositions);
+  const dispatch = useDispatch();
 
 	return (
-		arr.map((un, key) => {
+		positions.map((position, key) => {
+
 			return (
 				<Rnd
-					default={{
-						x: 20,
-						y: 20,
-						width: "300px",
-						height: "200px",
-					}}
+					bounds="parent"
+					minWidth="25"
+					minHeight="25"
+					enableResizing={{ right:true, bottom:true, bottomRight:true }}
+					size={{ width: position.width,  height: position.height }}
+					position={{ x: position.x, y: position.y }}
+				  onDragStop={(e, d) => { dispatch(dragWindow({ key: key, x: d.x, y: d.y })) }}
+					onResizeStop={(e, dir, ref, d, pos) => { dispatch(resizeWindow({ key: key, d:d })) }}
 					id={key}
 					className="Window"
 				>
