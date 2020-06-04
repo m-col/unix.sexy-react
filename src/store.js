@@ -2,7 +2,7 @@ import { createStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 
-import backgroundReducer from './features/background';
+import backgroundReducer from './features/background/slice';
 import windowReducer from './features/windows/slice';
 
 
