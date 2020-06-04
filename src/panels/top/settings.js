@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import ColorPicker from 'rc-color-picker';
+import 'rc-color-picker/assets/index.css';
 
 import { setBackground, selectBackground, setWallpaper } from '../../features/background/slice';
 
@@ -10,13 +12,25 @@ export default function SettingsTab() {
   const [inputColour, setInputColour] = useState(backgroundColour);
 
 	return (
-		<>
+		<div id="background2">
 			Set background:
 				<input
 					aria-label="Set background colour"
 					value={inputColour}
 					onChange={e => setInputColour(e.target.value)}
 				/>
+				<ColorPicker
+					color={inputColour}
+					alpha={100}
+					onChange={c => {
+						setInputColour(c.color)
+						dispatch(setBackground(inputColour))
+					}}
+					placement="topLeft"
+					className="some-class"
+					enableAlpha="false"
+				>
+				</ColorPicker>
 				<button onClick={() => dispatch(setBackground(inputColour))}>
 					Set
 				</button>
@@ -35,6 +49,6 @@ export default function SettingsTab() {
 						}
 					}}
 				/>
-		</>
+		</div>
 	);
 }
