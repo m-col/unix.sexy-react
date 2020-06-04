@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setBackground } from '../../features/background';
 import Tabs from '../../features/tabs/Tabs';
 import './index.css';
+import { setBackground } from '../../features/background';
+import { addWindow, delWindow } from '../../features/windows/slice';
 
 
 export function Top() {
@@ -31,6 +32,12 @@ export function Top() {
 						<li>Title bars</li>
 						<li>Rounded corners</li>
 					</ul>
+						<button onClick={() => dispatch(addWindow())}>
+							+
+						</button>
+						<button onClick={() => dispatch(delWindow())}>
+							-
+						</button>
 				</div>
 
 				<div label="Status bars">
