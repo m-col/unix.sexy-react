@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ColorPicker from 'rc-color-picker';
 import 'rc-color-picker/assets/index.css';
 
+import reset from '../../features/reset';
 import { setBackground, selectBackground, setWallpaper } from '../../features/background/slice';
 
 
@@ -49,6 +50,10 @@ export default function SettingsTab() {
 						}
 					}}
 				/>
+
+				<button onClick={() => dispatch(reset())}>
+					Reset
+				</button>
 		</div>
 	);
 }
