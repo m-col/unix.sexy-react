@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 
 
 export function Left() {
@@ -8,6 +7,5 @@ export function Left() {
 		</div>
 	);
 }
-
 
 export default Left;

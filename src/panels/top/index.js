@@ -7,7 +7,6 @@ import StatusBarsTab from './status_bars.js';
 import LaunchersTab from './launchers.js';
 import NotificationsTab from './notifications.js';
 import ExtrasTab from './extras.js';
-import './index.css';
 
 
 export default function Top() {
