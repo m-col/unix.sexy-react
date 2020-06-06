@@ -5,25 +5,28 @@ import storage from 'redux-persist/lib/storage';
 import { RESET } from './features/reset';
 import backgroundReducer from './features/background/slice';
 import windowReducer from './features/windows/slice';
+import tabReducer from './features/tabs/slice';
 
 
 const reducer = combineReducers({
-    background: backgroundReducer,
-    windows: windowReducer,
+	background: backgroundReducer,
+	windows: windowReducer,
+	tab: tabReducer,
 })
 
 
 const rootReducer = (state, action) => {
-    if (action.type === RESET) {
-        storage.removeItem('persist:root')
-        state = undefined;
-    }
-    return reducer(state, action);
+	if (action.type === RESET) {
+		storage.removeItem('persist:root')
+		state = undefined;
+	}
+	return reducer(state, action);
 };
 
 const persistConfig = {
-  key: 'root',
-  storage,
+	key: 'root',
+	storage,
+	whitelist: [],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
