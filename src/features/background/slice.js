@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fixColour } from '../helpers';
+import { fixColour } from 'features/helpers';
 
 
 export const backgroundSlice = createSlice({

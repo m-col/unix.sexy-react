@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import './index.css';
+import 'index.css';
 import App from './App';
-import { store, persistor } from './store';
-import * as serviceWorker from './serviceWorker';
+import { store, persistor } from 'store';
+import * as serviceWorker from 'serviceWorker';
 import { PersistGate } from 'redux-persist/integration/react';
 
 

@@ -5,10 +5,10 @@ export const windowSlice = createSlice({
   name: 'windows',
 
 	initialState: [
-		{ x: 320, y: 200, width: 280, height: 140, },
-		{ x: 640, y:  60, width: 140, height: 280, },
-		{ x: 640, y: 380, width: 280, height: 140, },
-		{ x: 460, y: 380, width: 140, height: 280, },
+		{ x: 320, y: 200, width: 280, height: 140 },
+		{ x: 640, y:  60, width: 140, height: 280 },
+		{ x: 640, y: 380, width: 280, height: 140 },
+		{ x: 460, y: 380, width: 140, height: 280 },
 	],
 
   reducers: {

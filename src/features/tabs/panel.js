@@ -15,7 +15,7 @@ export default function Tabs(props) {
 			/>
 
 			<div className="tab-content">
-				{props.children[active].props.children}
+				{props.children[active]}
 			</div>
 		</div>
 	);
@@ -29,6 +29,7 @@ function TabList(props) {
 		<ol className="tab-list">
 			{props.children.map((child, i) => {
 				const { label } = child.props;
+				console.log(child)
 
 				let className = 'tab-list-item';
 				if (props.active === i) {

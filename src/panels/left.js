@@ -7,5 +7,3 @@ export function Left() {
 		</div>
 	);
 }
-
-export default Left;

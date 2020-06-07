@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 
 
 export function Corner() {
@@ -8,9 +7,7 @@ export function Corner() {
 			<a href="https://unix.sexy">
 			unix.sexy
 			</a>
+			<p>desktop environment builder</p>
 		</div>
 	);
 }
-
-
-export default Corner;

@@ -1,8 +1,8 @@
 import React from 'react';
-import Corner from './panels/corner';
-import Top from './panels/top';
-import Left from './panels/left';
-import Desktop from './panels/desktop';
+import { Corner } from 'panels/corner.js';
+import { Top } from 'panels/top.js';
+import { Left } from 'panels/left.js';
+import { Desktop } from 'panels/desktop.js';
 
 
 function App() {
