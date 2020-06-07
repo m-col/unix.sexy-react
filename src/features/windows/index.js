@@ -4,20 +4,24 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { selectPositions, dragWindow, resizeWindow } from './slice';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
+import { selectBorderStyle } from 'features/borders/slice';
 
 
 export default function Windows() {
+  const dispatch = useDispatch();
   const positions = useSelector(selectPositions);
   const shadowStyle = useSelector(selectShadowStyleCSS);
-  const dispatch = useDispatch();
+  const borderStyle = useSelector(selectBorderStyle);
+
+	let style = {...shadowStyle, ...borderStyle}
 
 	return (
 		positions.map((position, key) => {
 			return (
 				<Rnd
 					bounds="parent"
-					minWidth="25"
-					minHeight="25"
+					minWidth="20"
+					minHeight="20"
 					enableResizing={{
 						right:true, bottom:true, bottomRight:true
 					}}
@@ -35,7 +39,7 @@ export default function Windows() {
 					}
 					id={key}
 					className="Window"
-					style={{boxShadow: shadowStyle}}
+					style={style}
 				>
 				</Rnd>
 			)

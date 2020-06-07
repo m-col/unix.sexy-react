@@ -6,6 +6,7 @@ import backgroundReducer from 'features/background/slice';
 import windowReducer from 'features/windows/slice';
 import tabReducer from 'features/tabs/slice';
 import shadowReducer from 'features/shadows/slice';
+import borderReducer from 'features/borders/slice';
 import { RESET } from 'features/reset/slice';
 
 
@@ -14,6 +15,7 @@ const reducer = combineReducers({
 	windows: windowReducer,
 	tab: tabReducer,
 	shadows: shadowReducer,
+	borders: borderReducer,
 })
 
 

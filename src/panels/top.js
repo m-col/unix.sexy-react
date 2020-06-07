@@ -7,6 +7,7 @@ import { ResetCtl } from 'features/reset/panel';
 
 import { WindowCtl } from 'features/windows/panel';
 import { ShadowCtl } from 'features/shadows/panel';
+import { BorderCtl } from 'features/borders/panel';
 
 import { StatusBarCtl } from 'features/status_bars/panel';
 
@@ -31,6 +32,7 @@ export function Top() {
 				<div label="Windows">
 					<WindowCtl />
 					<ShadowCtl />
+					<BorderCtl />
 				</div>
 
 				<div label="Status bars">
