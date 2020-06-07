@@ -19,18 +19,22 @@ export function ShadowCtl() {
 	return (
 		<div className="shadowCtl">
 
+			Horizontal offset
 			<input value={style.hOffset} type="number" 
 				onChange={e => dispatch(setHOffset(e.target.value))}
 			/>
 
+			Vertical offset
 			<input value={style.vOffset} type="number" 
 				onChange={e => dispatch(setVOffset(e.target.value))}
 			/>
 
-			<input value={style.blur} type="number" 
+			Blur radius
+			<input value={style.blur} type="number" min="0"
 				onChange={e => dispatch(setBlur(e.target.value))}
 			/>
 
+			Colour
 			<input value={style.colour}
 				onChange={e => dispatch(setColour(e.target.value))}
 			/>
@@ -39,7 +43,6 @@ export function ShadowCtl() {
 				onChange={c => {
 					dispatch(setColour(c.color))
 				}}
-				enableAlpha="false"
 			>
 			</ColorPicker>
 

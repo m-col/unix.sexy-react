@@ -38,7 +38,7 @@ export const selectShadowStyle = state => state.shadows;
 
 export const selectShadowStyleCSS = state => {
 	const { hOffset, vOffset, blur, colour } = state.shadows;
-	return `${hOffset}px ${vOffset}px ${blur}px ${colour}`
+	return {boxShadow: `${hOffset}px ${vOffset}px ${blur}px ${colour}`}
 }
 
 export default shadowSlice.reducer;
