@@ -22,7 +22,6 @@ export function BackgroundCtl() {
 
 			<ColorPicker
 				color={inputColour}
-				alpha={100}
 				onChange={c => {
 					setInputColour(c.color)
 					dispatch(setBackground(inputColour))

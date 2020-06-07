@@ -29,7 +29,6 @@ function TabList(props) {
 		<ol className="tab-list">
 			{props.children.map((child, i) => {
 				const { label } = child.props;
-				console.log(child)
 
 				let className = 'tab-list-item';
 				if (props.active === i) {

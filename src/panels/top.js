@@ -3,12 +3,18 @@ import React from 'react';
 import Tabs from 'features/tabs/panel';
 
 import { BackgroundCtl, WallpaperCtl } from 'features/background/panel';
-import { LauncherCtl } from 'features/launchers/panel';
-import { NotificationCtl } from 'features/notifications/panel';
-import { WindowCtl } from 'features/windows/panel';
-import { MiscCtl } from 'features/misc/panel';
-import { StatusBarCtl } from 'features/status_bars/panel';
 import { ResetCtl } from 'features/reset/panel';
+
+import { WindowCtl } from 'features/windows/panel';
+import { ShadowCtl } from 'features/shadows/panel';
+
+import { StatusBarCtl } from 'features/status_bars/panel';
+
+import { LauncherCtl } from 'features/launchers/panel';
+
+import { NotificationCtl } from 'features/notifications/panel';
+
+import { MiscCtl } from 'features/misc/panel';
 
 
 export function Top() {
@@ -24,6 +30,7 @@ export function Top() {
 
 				<div label="Windows">
 					<WindowCtl />
+					<ShadowCtl />
 				</div>
 
 				<div label="Status bars">
