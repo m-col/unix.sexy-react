@@ -1,13 +1,19 @@
 import React from 'react';
 
+import OptBox from 'features/optbox';
+
 
 export function StatusBarCtl() {
 	return (
-		<ul>
-			<li>polybar</li>
-			<li>lemonbar</li>
-			<li>i3blocks</li>
-			<li>Qtile bar</li>
-		</ul>
+		<OptBox className="StatusBarCtl" label="Todos">
+			<div className="opt">
+				<ul>
+					<li>polybar</li>
+					<li>lemonbar</li>
+					<li>i3blocks</li>
+					<li>Qtile bar</li>
+				</ul>
+			</div>
+		</OptBox>
 	);
 };

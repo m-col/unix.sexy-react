@@ -8,6 +8,3 @@ export function fixColour(colour) {
 			return false
 		}
 }
-
-
-export default fixColour;

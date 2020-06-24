@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ColorPicker from 'rc-color-picker';
 import 'rc-color-picker/assets/index.css';
@@ -9,6 +9,7 @@ import {
 	setBordorColor,
 	selectBorderStyle,
 } from './slice';
+import OptBox from 'features/optbox';
 
 
 export function BorderCtl() {
@@ -16,30 +17,36 @@ export function BorderCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<div className="BorderCtl">
+		<OptBox className="BorderCtl" label="Borders">
 
-			Corner radius
-			<input value={style.borderRadius} type="number" min={0}
-				onChange={e => dispatch(setBorderRadius(e.target.value))}
-			/>
+			<div className="opt">
+				Corner radius
+				<input value={style.borderRadius} type="number" min={0}
+					onChange={e => dispatch(setBorderRadius(e.target.value))}
+				/>
+			</div>
 
-			Width
-			<input value={style.borderWidth} type="number" min={0}
-				onChange={e => dispatch(setBorderWidth(e.target.value))}
-			/>
+			<div className="opt">
+				Width
+				<input value={style.borderWidth} type="number" min={0}
+					onChange={e => dispatch(setBorderWidth(e.target.value))}
+				/>
+			</div>
 
-			Color
-			<input value={style.borderColor}
-				onChange={e => dispatch(setBordorColor(e.target.value))}
-			/>
-			<ColorPicker
-				color={style.borderColor}
-				onChange={c => {
-					dispatch(setBordorColor(c.color))
-				}}
-			>
-			</ColorPicker>
+			<div className="opt">
+				Color
+				<input value={style.borderColor}
+					onChange={e => dispatch(setBordorColor(e.target.value))}
+				/>
+				<ColorPicker
+					color={style.borderColor}
+					onChange={c => {
+						dispatch(setBordorColor(c.color))
+					}}
+				>
+				</ColorPicker>
+			</div>
 
-		</div>
+		</OptBox>
 	);
 }

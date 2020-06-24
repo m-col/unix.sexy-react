@@ -1,10 +1,16 @@
 import React from 'react';
 
+import OptBox from 'features/optbox';
+
 
 export function MiscCtl() {
 	return (
-		<ul>
-			<li>?</li>
-		</ul>
+		<OptBox className="MiscCtl" label="Todos">
+			<div className="opt">
+				<ul>
+					<li>?</li>
+				</ul>
+			</div>
+		</OptBox>
 	);
 };

@@ -2,14 +2,19 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import reset from './slice.js';
+import OptBox from 'features/optbox';
 
 
 export function ResetCtl() {
   const dispatch = useDispatch();
 
   return (
-		<button onClick={() => dispatch(reset())}>
-			Reset
-		</button>
+		<OptBox className="ResetCtl" label="Reset state">
+			<div className="opt">
+				<button onClick={() => dispatch(reset())}>
+					Reset
+				</button>
+			</div>
+		</OptBox>
 	)
 }

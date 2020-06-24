@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ColorPicker from 'rc-color-picker';
 import 'rc-color-picker/assets/index.css';
@@ -10,6 +10,7 @@ import {
 	setBlur,
 	setColour,
 } from './slice';
+import OptBox from 'features/optbox';
 
 
 export function ShadowCtl() {
@@ -17,36 +18,43 @@ export function ShadowCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<div className="shadowCtl">
+		<OptBox className="shadowCtl" label="Shadows">
 
-			Horizontal offset
-			<input value={style.hOffset} type="number" 
-				onChange={e => dispatch(setHOffset(e.target.value))}
-			/>
+			<div className="opt">
+				Horizontal offset
+				<input value={style.hOffset} type="number" 
+					onChange={e => dispatch(setHOffset(e.target.value))}
+				/>
+			</div>
 
-			Vertical offset
-			<input value={style.vOffset} type="number" 
-				onChange={e => dispatch(setVOffset(e.target.value))}
-			/>
+			<div className="opt">
+				Vertical offset
+				<input value={style.vOffset} type="number" 
+					onChange={e => dispatch(setVOffset(e.target.value))}
+				/>
+			</div>
 
-			Blur radius
-			<input value={style.blur} type="number" min="0"
-				onChange={e => dispatch(setBlur(e.target.value))}
-			/>
+			<div className="opt">
+				Blur radius
+				<input value={style.blur} type="number" min="0"
+					onChange={e => dispatch(setBlur(e.target.value))}
+				/>
+			</div>
 
-			Colour
-			<input value={style.colour}
-				onChange={e => dispatch(setColour(e.target.value))}
-			/>
-			<ColorPicker
-				color={style.colour}
-				onChange={c => {
-					dispatch(setColour(c.color))
-				}}
-			>
-			</ColorPicker>
+			<div className="opt">
+				Colour
+				<input value={style.colour}
+					onChange={e => dispatch(setColour(e.target.value))}
+				/>
+				<ColorPicker
+					color={style.colour}
+					onChange={c => {
+							dispatch(setColour(c.color))
+						}}
+					>
+				</ColorPicker>
+			</div>
 
-
-		</div>
+		</OptBox>
 	);
 }

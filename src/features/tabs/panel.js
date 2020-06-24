@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectTab, setTab } from './slice';
+import './index.css';
 
 
 export default function Tabs(props) {
@@ -14,9 +15,9 @@ export default function Tabs(props) {
 				children={props.children}
 			/>
 
-			<div className="tab-content">
-				{props.children[active]}
-			</div>
+		{React.cloneElement(props.children[active], {
+			className: 'tab-content'
+		})}
 		</div>
 	);
 }

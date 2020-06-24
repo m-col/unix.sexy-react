@@ -2,27 +2,27 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addWindow, delWindow } from './slice';
+import OptBox from 'features/optbox';
 
 
 export function WindowCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<>
-			<ul>
-				<li>Border styles</li>
-				<li>Title bars</li>
-				<li>Rounded corners</li>
-				<li>Shadows(picom/compton)</li>
-			</ul>
+		<OptBox className="WindowCtl" label="Todos">
+			<div className="opt">
+				<ul>
+					<li>Border styles</li>
+					<li>Title bars</li>
+					<li>Transparency + blur</li>
+				</ul>
+			</div>
 
-			<button onClick={() => dispatch(addWindow())}>
-				+
-			</button>
-			<button onClick={() => dispatch(delWindow())}>
-				-
-			</button>
-		</>
+			<div className="opt">
+				<button onClick={() => dispatch(addWindow())}> + </button>
+				<button onClick={() => dispatch(delWindow())}> - </button>
+			</div>
+		</OptBox>
 	);
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Tabs from 'features/tabs/panel';
 
-import { BackgroundCtl, WallpaperCtl } from 'features/background/panel';
+import { BackgroundCtl } from 'features/background/panel';
 import { ResetCtl } from 'features/reset/panel';
 
 import { WindowCtl } from 'features/windows/panel';
@@ -24,9 +24,8 @@ export function Top() {
 			<Tabs>
 
 				<div label="Settings">
-					<BackgroundCtl />
-					<WallpaperCtl />
 					<ResetCtl />
+					<BackgroundCtl />
 				</div>
 
 				<div label="Windows">
