@@ -6,6 +6,7 @@ import { BackgroundCtl } from 'features/background/panel';
 import { ResetCtl } from 'features/reset/panel';
 
 import { WindowCtl } from 'features/windows/panel';
+import { WindowContentCtl } from 'features/window_content/panel';
 import { ShadowCtl } from 'features/shadows/panel';
 import { BorderCtl } from 'features/borders/panel';
 
@@ -30,6 +31,7 @@ export function Top() {
 
 				<div label="Windows">
 					<WindowCtl />
+					<WindowContentCtl />
 					<ShadowCtl />
 					<BorderCtl />
 				</div>

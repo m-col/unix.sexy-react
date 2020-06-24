@@ -3,6 +3,7 @@ import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectPositions, dragWindow, resizeWindow } from './slice';
+import { selectWindowContent, selectWindowContentCSS } from 'features/window_content/slice';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle } from 'features/borders/slice';
 
@@ -10,6 +11,8 @@ import { selectBorderStyle } from 'features/borders/slice';
 export default function Windows() {
   const dispatch = useDispatch();
   const positions = useSelector(selectPositions);
+  const windowContent = useSelector(selectWindowContent);
+  const windowContentStyle = useSelector(selectWindowContentCSS);
   const shadowStyle = useSelector(selectShadowStyleCSS);
   const borderStyle = useSelector(selectBorderStyle);
 
@@ -41,6 +44,13 @@ export default function Windows() {
 					className="Window"
 					style={style}
 				>
+
+				{windowContent.text &&
+					<div className="window-content" style={windowContentStyle}>
+						sample text here
+					</div>
+				}
+
 				</Rnd>
 			)
 		})
