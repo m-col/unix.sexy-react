@@ -4,7 +4,7 @@ import ColorPicker from 'rc-color-picker';
 import 'rc-color-picker/assets/index.css';
 
 import { setBackground, selectBackground, setWallpaper } from './slice';
-import OptBox from 'features/optbox';
+import OptBox from 'components/optbox';
 
 
 export function BackgroundCtl() {

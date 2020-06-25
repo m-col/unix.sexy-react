@@ -1,6 +1,6 @@
 import React from 'react';
 
-import OptBox from 'features/optbox';
+import OptBox from 'components/optbox';
 
 
 export function NotificationCtl() {

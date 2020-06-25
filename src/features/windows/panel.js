@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addWindow, delWindow } from './slice';
-import OptBox from 'features/optbox';
+import OptBox from 'components/optbox';
 
 
 export function WindowCtl() {

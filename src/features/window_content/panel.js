@@ -9,8 +9,8 @@ import {
 	setTextColour,
 	setPadding, selectWindowContent
 } from './slice';
-import OptBox from 'features/optbox';
-import Switch from 'features/switch';
+import OptBox from 'components/optbox';
+import Switch from 'components/switch';
 
 
 export function WindowContentCtl() {

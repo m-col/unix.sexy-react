@@ -9,7 +9,7 @@ import {
 	setBordorColor,
 	selectBorderStyle,
 } from './slice';
-import OptBox from 'features/optbox';
+import OptBox from 'components/optbox';
 
 
 export function BorderCtl() {
