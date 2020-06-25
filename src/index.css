@@ -46,6 +46,11 @@ code {
     width: 200px;
 }
 
+#Desktop {
+    background-size: cover;
+    background-position: center center;
+}
+
 .Window {
     border-style: solid;
 }
@@ -54,4 +59,5 @@ code {
     font-size: 40%;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }

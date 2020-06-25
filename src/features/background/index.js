@@ -1,25 +1,19 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectWallpaper } from './slice';
+import { selectWallpaper, selectBackground } from './slice';
 
 
 export default function Wallpaper() {
   const wallpaper = useSelector(selectWallpaper);
+  const background = useSelector(selectBackground);
 
-	if (!wallpaper) {
-		return null;
+	if (wallpaper) {
+		return {
+				backgroundImage: `url(${wallpaper})`
+		}
 	}
 
-	return (
-		<img
-			src={wallpaper}
-			style={{
-				maxWidth: "100%",
-				maxHeight: "100%",
-				objectFit: "contain",
-			}}
-			alt=""
-		/>
-	);
+	return {
+			backgroundColor: background
+	}
 };
