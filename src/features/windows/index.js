@@ -16,7 +16,7 @@ export default function Windows() {
   const shadowStyle = useSelector(selectShadowStyleCSS);
   const borderStyle = useSelector(selectBorderStyle);
 
-	let style = {...shadowStyle, ...borderStyle}
+	let style = {...shadowStyle, ...borderStyle, ...windowContentStyle}
 
 	return (
 		positions.map((position, key) => {
@@ -46,7 +46,7 @@ export default function Windows() {
 				>
 
 				{windowContent.text &&
-					<div className="window-content" style={windowContentStyle}>
+					<div className="window-content">
 						sample text here
 					</div>
 				}
