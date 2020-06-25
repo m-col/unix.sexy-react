@@ -4,6 +4,7 @@ import ColorPicker from 'rc-color-picker';
 import 'rc-color-picker/assets/index.css';
 
 import {
+	toggleShadows,
 	selectShadowStyle,
 	setHOffset,
 	setVOffset,
@@ -11,6 +12,7 @@ import {
 	setColour,
 } from './slice';
 import OptBox from 'components/optbox';
+import Switch from 'components/switch';
 
 
 export function ShadowCtl() {
@@ -19,6 +21,26 @@ export function ShadowCtl() {
 
 	return (
 		<OptBox className="shadowCtl" label="Shadows">
+
+			<div className="opt">
+				Enabled
+				<Switch
+					onClick={() => dispatch(toggleShadows())}
+					value={style.enabled}
+				/>
+
+				Colour
+				<input value={style.colour}
+					onChange={e => dispatch(setColour(e.target.value))}
+				/>
+				<ColorPicker
+					color={style.colour}
+					onChange={c => {
+							dispatch(setColour(c.color))
+						}}
+					>
+				</ColorPicker>
+			</div>
 
 			<div className="opt">
 				Horizontal offset
@@ -39,20 +61,6 @@ export function ShadowCtl() {
 				<input value={style.blur} type="number" min="0"
 					onChange={e => dispatch(setBlur(e.target.value))}
 				/>
-			</div>
-
-			<div className="opt">
-				Colour
-				<input value={style.colour}
-					onChange={e => dispatch(setColour(e.target.value))}
-				/>
-				<ColorPicker
-					color={style.colour}
-					onChange={c => {
-							dispatch(setColour(c.color))
-						}}
-					>
-				</ColorPicker>
 			</div>
 
 		</OptBox>
