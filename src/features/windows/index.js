@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { selectPositions, dragWindow, resizeWindow } from './slice';
 import { selectWindowContent, selectWindowContentCSS } from 'features/window_content/slice';
+import TitleBar from 'features/title_bars';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle } from 'features/borders/slice';
 
@@ -16,7 +17,7 @@ export default function Windows() {
   const shadowStyle = useSelector(selectShadowStyleCSS);
   const borderStyle = useSelector(selectBorderStyle);
 
-	let style = {...shadowStyle, ...borderStyle, ...windowContentStyle}
+	let style = {...shadowStyle, ...borderStyle, ...windowContentStyle};
 
 	return (
 		positions.map((position, key) => {
@@ -45,11 +46,19 @@ export default function Windows() {
 					style={style}
 				>
 
-				{windowContent.text &&
-					<div className="window-content">
-						sample text here
-					</div>
-				}
+				<TitleBar />
+
+				<div
+					className="window-content"
+					style={{
+						padding: `${windowContent.padding}px`,
+					}}>
+					{windowContent.text &&
+						<div className="window-text">
+							sample text here
+						</div>
+					}
+				</div>
 
 				</Rnd>
 			)

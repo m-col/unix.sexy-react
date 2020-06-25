@@ -53,11 +53,11 @@ code {
 
 .Window {
     border-style: solid;
+    overflow: hidden;
 }
 
 .window-content {
     font-size: 40%;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
