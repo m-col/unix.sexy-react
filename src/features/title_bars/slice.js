@@ -6,8 +6,10 @@ export const titleBarSlice = createSlice({
 
 	initialState: {
 		enabled: true,
-		colour: '#8d80d8',
-		textColour: '#030405',
+		colour: '#252133',
+		textColour: '#8d80d8',
+		colourFocus: '#8d80d8',
+		textColourFocus: '#12101d',
 		width: 20,
 	},
 
@@ -21,6 +23,12 @@ export const titleBarSlice = createSlice({
     setTextColour: (state, value) => {
 			state.textColour = value.payload
     },
+    setColourFocus: (state, value) => {
+			state.colourFocus = value.payload
+    },
+    setTextColourFocus: (state, value) => {
+			state.textColourFocus = value.payload
+    },
     setWidth: (state, value) => {
 			state.width = value.payload
     },
@@ -31,19 +39,11 @@ export const {
 	toggle,
 	setColour,
 	setTextColour,
+	setColourFocus,
+	setTextColourFocus,
 	setWidth,
 } = titleBarSlice.actions;
 
 export const selectTitleBars = state => state.titleBars;
-
-export const selectTitleBarsCSS = state => {
-	const { colour, textColour, width } = state.titleBars;
-	return {
-		backgroundColor: colour,
-		height: `${width}px`,
-		width: "100%",
-		color: textColour,
-	}
-}
 
 export default titleBarSlice.reducer;

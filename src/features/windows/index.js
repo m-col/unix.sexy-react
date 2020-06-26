@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -6,18 +6,22 @@ import { selectPositions, dragWindow, resizeWindow } from './slice';
 import { selectWindowContent, selectWindowContentCSS } from 'features/window_content/slice';
 import TitleBar from 'features/title_bars';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
-import { selectBorderStyle } from 'features/borders/slice';
+import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
 
 
 export default function Windows() {
   const dispatch = useDispatch();
   const positions = useSelector(selectPositions);
   const windowContent = useSelector(selectWindowContent);
+  const [focussed, setFocus] = useState(0);
+
   const windowContentStyle = useSelector(selectWindowContentCSS);
   const shadowStyle = useSelector(selectShadowStyleCSS);
   const borderStyle = useSelector(selectBorderStyle);
-
 	let style = {...shadowStyle, ...borderStyle, ...windowContentStyle};
+
+  const borderFocusStyle = useSelector(selectBorderFocusStyle);
+	let focusStyle = Object.assign({}, style, borderFocusStyle);
 
 	return (
 		positions.map((position, key) => {
@@ -43,10 +47,13 @@ export default function Windows() {
 					}
 					id={key}
 					className="Window"
-					style={style}
+					style={(key === focussed) ? focusStyle : style}
+					onClick={() => setFocus(key)}
 				>
 
-				<TitleBar />
+				<TitleBar
+					focussed={(key === focussed)}
+				/>
 
 				<div
 					className="window-content"

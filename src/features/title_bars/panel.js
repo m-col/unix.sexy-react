@@ -7,6 +7,8 @@ import {
 	toggle,
 	setColour,
 	setTextColour,
+	setColourFocus,
+	setTextColourFocus,
 	setWidth,
   selectTitleBars,
 } from './slice';
@@ -42,13 +44,6 @@ export function TitleBarCtl() {
 			</div>
 
 			<div className="opt">
-				Width
-				<input value={style.width} type="number" min="1"
-					onChange={e => dispatch(setWidth(e.target.value))}
-				/>
-			</div>
-
-			<div className="opt">
 				Text colour
 				<input value={style.textColour}
 					onChange={e => dispatch(setTextColour(e.target.value))}
@@ -60,6 +55,40 @@ export function TitleBarCtl() {
 						}}
 					>
 				</ColorPicker>
+			</div>
+
+			<div className="opt">
+				Focussed colour
+				<input value={style.colourFocus}
+					onChange={e => dispatch(setColourFocus(e.target.value))}
+				/>
+				<ColorPicker
+					color={style.colourFocus}
+					onChange={c => {
+							dispatch(setColourFocus(c.color))
+						}}
+					>
+				</ColorPicker>
+
+				Focussed text colour
+				<input value={style.textColourFocus}
+					onChange={e => dispatch(setTextColourFocus(e.target.value))}
+				/>
+				<ColorPicker
+					color={style.textColourFocus}
+					onChange={c => {
+							dispatch(setTextColourFocus(c.color))
+						}}
+					>
+				</ColorPicker>
+			</div>
+
+
+			<div className="opt">
+				Width
+				<input value={style.width} type="number" min="1"
+					onChange={e => dispatch(setWidth(e.target.value))}
+				/>
 			</div>
 
 		</OptBox>

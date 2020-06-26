@@ -1,12 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectTitleBars, selectTitleBarsCSS } from './slice';
+import { selectTitleBars } from './slice';
 
 
-export default function TitleBar() {
+export default function TitleBar(props) {
   const titleBars = useSelector(selectTitleBars);
-  const titleBarsCSS = useSelector(selectTitleBarsCSS);
 
 	if (!titleBars.enabled) {
 		return null;
@@ -15,7 +14,12 @@ export default function TitleBar() {
 	return (
 		<div
 			className="title-bar"
-			style={titleBarsCSS}
+			style={{
+				backgroundColor: (props.focussed ? titleBars.colourFocus : titleBars.colour),
+				height: `${titleBars.width}px`,
+				width: "100%",
+				color: (props.focussed ? titleBars.textColourFocus : titleBars.textColour),
+			}}
 		>
 			term
 		</div>

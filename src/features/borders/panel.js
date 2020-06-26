@@ -7,6 +7,7 @@ import {
 	setBorderRadius,
 	setBorderWidth,
 	setBordorColor,
+	setBordorColorFocus,
 	selectBorderStyle,
 } from './slice';
 import OptBox from 'components/optbox';
@@ -34,7 +35,7 @@ export function BorderCtl() {
 			</div>
 
 			<div className="opt">
-				Color
+				Colour
 				<input value={style.borderColor}
 					onChange={e => dispatch(setBordorColor(e.target.value))}
 				/>
@@ -42,6 +43,20 @@ export function BorderCtl() {
 					color={style.borderColor}
 					onChange={c => {
 						dispatch(setBordorColor(c.color))
+					}}
+				>
+				</ColorPicker>
+			</div>
+
+			<div className="opt">
+				Focussed colour
+				<input value={style.borderColorFocus}
+					onChange={e => dispatch(setBordorColorFocus(e.target.value))}
+				/>
+				<ColorPicker
+					color={style.borderColorFocus}
+					onChange={c => {
+						dispatch(setBordorColorFocus(c.color))
 					}}
 				>
 				</ColorPicker>
