@@ -6,6 +6,7 @@ import 'rc-color-picker/assets/index.css';
 import {
 	toggle,
 	setColour,
+	setTextColour,
 	setWidth,
   selectTitleBars,
 } from './slice';
@@ -45,6 +46,20 @@ export function TitleBarCtl() {
 				<input value={style.width} type="number" min="1"
 					onChange={e => dispatch(setWidth(e.target.value))}
 				/>
+			</div>
+
+			<div className="opt">
+				Text colour
+				<input value={style.textColour}
+					onChange={e => dispatch(setTextColour(e.target.value))}
+				/>
+				<ColorPicker
+					color={style.textColour}
+					onChange={c => {
+							dispatch(setTextColour(c.color))
+						}}
+					>
+				</ColorPicker>
 			</div>
 
 		</OptBox>

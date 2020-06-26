@@ -7,6 +7,7 @@ export const titleBarSlice = createSlice({
 	initialState: {
 		enabled: true,
 		colour: '#8d80d8',
+		textColour: '#030405',
 		width: 20,
 	},
 
@@ -17,6 +18,9 @@ export const titleBarSlice = createSlice({
     setColour: (state, value) => {
 			state.colour = value.payload
     },
+    setTextColour: (state, value) => {
+			state.textColour = value.payload
+    },
     setWidth: (state, value) => {
 			state.width = value.payload
     },
@@ -26,17 +30,19 @@ export const titleBarSlice = createSlice({
 export const {
 	toggle,
 	setColour,
+	setTextColour,
 	setWidth,
 } = titleBarSlice.actions;
 
 export const selectTitleBars = state => state.titleBars;
 
 export const selectTitleBarsCSS = state => {
-	const { colour, width } = state.titleBars;
+	const { colour, textColour, width } = state.titleBars;
 	return {
 		backgroundColor: colour,
 		height: `${width}px`,
 		width: "100%",
+		color: textColour,
 	}
 }
 
