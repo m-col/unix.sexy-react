@@ -7,9 +7,9 @@ export const windowContentSlice = createSlice({
   name: 'windowContent',
 
 	initialState: {
-		colour: "#ccc",
+		colour: "#030405",
 		text: true,
-		textColour: "#777",
+		textColour: "#c5c5c8",
 		padding: 5,
 	},
 
@@ -52,7 +52,6 @@ export const selectWindowContentCSS = state => {
 	return {
 		backgroundColor: colour,
 		color: textColour,
-		padding: `${padding}px`
 	}
 }
 

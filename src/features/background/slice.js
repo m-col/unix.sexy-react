@@ -7,7 +7,7 @@ export const backgroundSlice = createSlice({
 	name: 'background',
 
 	initialState: {
-		value: '#aaaaff',
+		value: '#5d479d',
 		wallpaper: "",
 	},
 

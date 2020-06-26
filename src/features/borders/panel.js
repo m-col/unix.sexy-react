@@ -47,6 +47,10 @@ export function BorderCtl() {
 				</ColorPicker>
 			</div>
 
+			<div className="opt">
+				TODO: border styles
+			</div>
+
 		</OptBox>
 	);
 }

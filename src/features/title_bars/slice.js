@@ -6,7 +6,7 @@ export const titleBarSlice = createSlice({
 
 	initialState: {
 		enabled: true,
-		colour: '#333333',
+		colour: '#8d80d8',
 		width: 20,
 	},
 

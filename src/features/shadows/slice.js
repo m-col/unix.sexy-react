@@ -6,10 +6,10 @@ export const shadowSlice = createSlice({
 
 	initialState: {
 		enabled: true,
-		hOffset: 3,
-		vOffset: 3,
-		blur: 8,
-		colour: '#555555',
+		hOffset: 4,
+		vOffset: 4,
+		blur: 4,
+		colour: '#000000',
 	},
 
   reducers: {

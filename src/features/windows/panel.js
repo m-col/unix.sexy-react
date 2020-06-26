@@ -12,13 +12,12 @@ export function WindowCtl() {
 		<OptBox className="WindowCtl" label="Todos">
 			<div className="opt">
 				<ul>
-					<li>Border styles</li>
-					<li>Title bars</li>
 					<li>Transparency + blur</li>
 				</ul>
 			</div>
 
 			<div className="opt">
+				Number
 				<button onClick={() => dispatch(addWindow())}> + </button>
 				<button onClick={() => dispatch(delWindow())}> - </button>
 			</div>
