@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addWindow, delWindow } from './slice';
+import Button from 'components/button';
 import OptBox from 'components/optbox';
 
 
@@ -9,17 +10,10 @@ export function WindowCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<OptBox className="WindowCtl" label="Todos">
+		<OptBox className="WindowCtl" label="Number" width="100px">
 			<div>
-				<ul>
-					<li>Transparency + blur</li>
-				</ul>
-			</div>
-
-			<div>
-				Number
-				<button onClick={() => dispatch(addWindow())}> + </button>
-				<button onClick={() => dispatch(delWindow())}> - </button>
+				<Button text={"+"} callback={addWindow} />
+				<Button text={"-"} callback={delWindow} />
 			</div>
 		</OptBox>
 	);
