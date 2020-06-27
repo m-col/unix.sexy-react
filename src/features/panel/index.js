@@ -26,7 +26,11 @@ import { MiscCtl } from 'features/misc/panel';
 export function Panel() {
   const dispatch = useDispatch();
   const position = useSelector(selectPanel);
-  const shadowStyle = useSelector(selectShadowStyleCSS);
+
+	const style = {
+		...useSelector(selectShadowStyleCSS),
+		backgroundColor: "#ffffff",
+	};
 
 	return (
 		<Rnd
@@ -34,13 +38,13 @@ export function Panel() {
 			id="Panel"
 			cancel=".tab-content"
 			enableResizing={false}
-			style={shadowStyle}
+			style={style}
 			position={{
 				x: position.x,
 				y: position.y
 			}}
 			size={{
-				width: "520px",  height: "212px"
+				width: "520px",  height: "204px"
 			}}
 			onDragStop={
 				(e, d) => {dispatch(dragPanel({x: d.x, y: d.y}))}

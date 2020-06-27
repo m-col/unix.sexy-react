@@ -5,17 +5,18 @@
 .tab-list {
     padding: 0;
     margin: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .tab-list-item {
     display: inline-block;
     list-style: none;
-    background: #eee;
+    opacity: 0.85;
     padding: 0.5rem 0.75rem;
 }
 
 .tab-list-active {
-    background: #fff;;
+    opacity: 1;
 }
 
 .tab-content {
@@ -25,4 +26,8 @@
     overflow-x: auto;
     overflow-y: hidden;
     cursor: default;
+}
+
+h3 {
+    font-weight:normal;
 }

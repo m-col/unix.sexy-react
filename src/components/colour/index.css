@@ -1,5 +1,5 @@
 span.rc-color-picker-trigger {
-    border: 2px solid #ddd;
+    border: 2px solid rgba(0, 0, 0, 0);
     display: initial;
     padding: 5px 14px;
 }

@@ -2,11 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectTab, setTab } from './slice';
+import { selectWindowContentCSS } from 'features/window_content/slice';
 import './index.css';
 
 
 export default function Tabs(props) {
   const active = useSelector(selectTab);
+	const style = useSelector(selectWindowContentCSS);
 
 	return (
 		<div className="tabs">
@@ -16,7 +18,8 @@ export default function Tabs(props) {
 			/>
 
 		{React.cloneElement(props.children[active], {
-			className: 'tab-content'
+			className: 'tab-content',
+			style: style
 		})}
 		</div>
 	);
@@ -25,6 +28,7 @@ export default function Tabs(props) {
 
 function TabList(props) {
   const dispatch = useDispatch();
+	const style = useSelector(selectWindowContentCSS);
 
 	return (
 		<ol className="tab-list">
@@ -40,6 +44,7 @@ function TabList(props) {
 					<li
 						className={className}
 						onClick={() => dispatch(setTab(i))}
+						style={style}
 						key={label}
 					>
 						{label}

@@ -2,29 +2,35 @@ import React, { useState } from 'react';
 import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectPositions, dragWindow, resizeWindow } from './slice';
-import { selectWindowContentCSS } from 'features/window_content/slice';
 import TitleBar from 'features/title_bars';
 import WindowContent from 'features/window_content';
+import './index.css';
+
+import { selectPositions, dragWindow, resizeWindow } from './slice';
+import { selectWindowContentCSS } from 'features/window_content/slice';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
 import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
-import './index.css';
+
 
 export default function Windows() {
   const dispatch = useDispatch();
   const positions = useSelector(selectPositions);
   const [focussed, setFocus] = useState(0);
 
-  const windowContentStyle = useSelector(selectWindowContentCSS);
-  const shadowStyle = useSelector(selectShadowStyleCSS);
-  const borderStyle = useSelector(selectBorderStyle);
-  const alphaStyle = useSelector(selectAlphaStyle);
-	let style = {...shadowStyle, ...borderStyle, ...windowContentStyle, ...alphaStyle};
+	const style = {
+		...useSelector(selectShadowStyleCSS),
+		...useSelector(selectWindowContentCSS),
+		...useSelector(selectBorderStyle),
+		...useSelector(selectAlphaStyle),
+	};
 
-  const borderFocusStyle = useSelector(selectBorderFocusStyle);
-  const alphaFocusStyle = useSelector(selectAlphaFocusStyle);
-	let focusStyle = Object.assign({zIndex:1}, style, borderFocusStyle, alphaFocusStyle);
+	const focusStyle = {
+		...style,
+		...useSelector(selectBorderFocusStyle),
+		...useSelector(selectAlphaFocusStyle),
+		zIndex: 1,
+	};
 
 	return (
 		positions.map((position, key) => {

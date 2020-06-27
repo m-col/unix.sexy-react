@@ -6,7 +6,7 @@ export const panelSlice = createSlice({
 
 	initialState: {
 		x: 870,
-		y: 359,
+		y: 363,
 	},
 
   reducers: {
