@@ -21,7 +21,7 @@ export function WindowContentCtl() {
 
 			<div>
 				Colour
-				<Colour value={windowContent.colour} onChange={setColour} />
+				<Colour value={windowContent.colour} callback={setColour} />
 			</div>
 
 			<div>

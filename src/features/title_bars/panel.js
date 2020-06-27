@@ -34,17 +34,17 @@ export function TitleBarCtl() {
 
 			<div>
 				Colour
-				<Colour value={style.colour} onChange={setColour} />
+				<Colour value={style.colour} callback={setColour} />
 				Text
-				<Colour value={style.textColour} onChange={setTextColour} />
+				<Colour value={style.textColour} callback={setTextColour} />
 			</div>
 
 			<div>
 				Focussed
-				<Colour value={style.colourFocus} onChange={setColourFocus} />
+				<Colour value={style.colourFocus} callback={setColourFocus} />
 
 				Text
-				<Colour value={style.textColourFocus} onChange={setTextColourFocus} />
+				<Colour value={style.textColourFocus} callback={setTextColourFocus} />
 			</div>
 
 

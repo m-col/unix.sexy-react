@@ -23,10 +23,10 @@ export function ShadowCtl() {
 
 			<div>
 				Enabled
-				<Switch callback={toggleShadows} value={style.enabled} />
+				<Switch value={style.enabled} callback={toggleShadows} />
 
 				Colour
-				<Colour callback={style.colour} value={setColour} />
+				<Colour value={style.colour} callback={setColour} />
 			</div>
 
 			<div>
