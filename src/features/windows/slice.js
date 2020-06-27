@@ -5,9 +5,8 @@ export const windowSlice = createSlice({
   name: 'windows',
 
 	initialState: [
-		{ x: 240, y: 120, width: 340, height: 220 },
-		{ x: 660, y: 220, width: 340, height: 220 },
-		{ x: 360, y: 380, width: 260, height: 160 },
+		{ x: 400, y: 150, width: 440, height: 300 },
+		{ x: 580, y: 480, width: 260, height: 240 },
 	],
 
   reducers: {

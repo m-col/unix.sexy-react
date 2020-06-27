@@ -5,8 +5,8 @@ export const panelSlice = createSlice({
   name: 'panel',
 
 	initialState: {
-		x: 30,
-		y: 30,
+		x: 870,
+		y: 359,
 	},
 
   reducers: {
