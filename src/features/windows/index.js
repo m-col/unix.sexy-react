@@ -24,7 +24,7 @@ export default function Windows() {
 
   const borderFocusStyle = useSelector(selectBorderFocusStyle);
   const alphaFocusStyle = useSelector(selectAlphaFocusStyle);
-	let focusStyle = Object.assign({}, style, borderFocusStyle, alphaFocusStyle);
+	let focusStyle = Object.assign({zIndex:1}, style, borderFocusStyle, alphaFocusStyle);
 
 	return (
 		positions.map((position, key) => {
