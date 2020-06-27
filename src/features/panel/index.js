@@ -2,10 +2,13 @@ import React from 'react';
 import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { dragPanel, selectPanel } from './slice';
-
 import Tabs from 'components/tabs';
+import { dragPanel, selectPanel } from './slice';
+import { selectShadowStyleCSS } from 'features/shadows/slice';
+import './index.css';
 
+
+// Panel contents
 import { AlphaCtl } from 'features/alpha/panel';
 import { BackgroundCtl } from 'features/background/panel';
 import { ResetCtl } from 'features/reset/panel';
@@ -18,12 +21,12 @@ import { StatusBarCtl } from 'features/status_bars/panel';
 import { LauncherCtl } from 'features/launchers/panel';
 import { NotificationCtl } from 'features/notifications/panel';
 import { MiscCtl } from 'features/misc/panel';
-import './index.css';
 
 
 export function Panel() {
   const dispatch = useDispatch();
   const position = useSelector(selectPanel);
+  const shadowStyle = useSelector(selectShadowStyleCSS);
 
 	return (
 		<Rnd
@@ -31,6 +34,7 @@ export function Panel() {
 			id="Panel"
 			cancel=".tab-content"
 			enableResizing={false}
+			style={shadowStyle}
 			position={{
 				x: position.x,
 				y: position.y
