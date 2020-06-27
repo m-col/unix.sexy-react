@@ -1,14 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
+import { selectBackground } from 'features/background/slice';
+import Wallpaper from 'features/background';
 import Windows from 'features/windows';
-import Wallpaper from 'features/background/index';
 
 
 export function Desktop() {
-	const wallpaper = Wallpaper();
+  const background = useSelector(selectBackground);
 
 	return (
-		<div id="Desktop" style={wallpaper}>
+		<div id="Desktop" style={{backgroundColor: background.colour}}>
+			<Wallpaper />
 			<Windows />
 		</div>
 	);

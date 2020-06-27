@@ -46,11 +46,6 @@ code {
     width: 200px;
 }
 
-#Desktop {
-    background-size: cover;
-    background-position: center center;
-}
-
 .Window {
     border-style: solid;
     overflow: hidden;

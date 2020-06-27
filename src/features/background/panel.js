@@ -1,13 +1,20 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setBackground, selectBackground, setWallpaper } from './slice';
+import {
+	setBackground,
+	setWallpaper,
+	removeWallpaper,
+	setTint,
+	selectBackground,
+} from './slice';
+import Button from 'components/button';
 import Colour from 'components/colour';
 import OptBox from 'components/optbox';
 
 
 export function BackgroundCtl() {
-  const backgroundColour = useSelector(selectBackground);
+  const background = useSelector(selectBackground);
   const dispatch = useDispatch();
 
 	return (
@@ -15,7 +22,7 @@ export function BackgroundCtl() {
 
 			<div>
 				Colour
-				<Colour value={backgroundColour} callback={setBackground} />
+				<Colour value={background.colour} callback={setBackground} />
 			</div>
 
 			<div>
@@ -34,13 +41,14 @@ export function BackgroundCtl() {
 						}
 					}}
 				/>
+				<Button text="Remove" callback={removeWallpaper} />
 			</div>
 
 			<div>
-				<ul>
-					<li>wallpaper saturation</li>
-					<li>wallpaper tint</li>
-				</ul>
+				Tint wallpaper
+				<input value={background.tint} type="number" min={0} max={100}
+					onChange={e => dispatch(setTint(e.target.value))}
+				/>
 			</div>
 		</OptBox>
 	);
