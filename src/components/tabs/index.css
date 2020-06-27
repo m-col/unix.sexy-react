@@ -24,4 +24,5 @@
     height: 175px;
     overflow-x: auto;
     overflow-y: hidden;
+    cursor: default;
 }

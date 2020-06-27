@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { dragPanel, selectPanel } from './slice';
 
-import Tabs from 'components/tabs/panel';
+import Tabs from 'components/tabs';
 
 import { AlphaCtl } from 'features/alpha/panel';
 import { BackgroundCtl } from 'features/background/panel';
@@ -29,6 +29,7 @@ export function Panel() {
 		<Rnd
 			bounds="parent"
 			id="Panel"
+			cancel=".tab-content"
 			enableResizing={false}
 			position={{
 				x: position.x,
