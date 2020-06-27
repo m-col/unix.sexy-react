@@ -3,7 +3,7 @@ import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectPositions, dragWindow, resizeWindow } from './slice';
-import { selectWindowContent, selectWindowContentCSS } from 'features/window_content/slice';
+import { selectWindowContentCSS } from 'features/window_content/slice';
 import TitleBar from 'features/title_bars';
 import WindowContent from 'features/window_content';
 import { selectShadowStyleCSS } from 'features/shadows/slice';

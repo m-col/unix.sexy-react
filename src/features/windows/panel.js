@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 import { addWindow, delWindow } from './slice';
 import Button from 'components/button';
@@ -7,8 +6,6 @@ import OptBox from 'components/optbox';
 
 
 export function WindowCtl() {
-  const dispatch = useDispatch();
-
 	return (
 		<OptBox className="WindowCtl" label="Number" width="100px">
 			<div>
