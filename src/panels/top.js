@@ -2,6 +2,7 @@ import React from 'react';
 
 import Tabs from 'components/tabs/panel';
 
+import { AlphaCtl } from 'features/alpha/panel';
 import { BackgroundCtl } from 'features/background/panel';
 import { ResetCtl } from 'features/reset/panel';
 import { WindowCtl } from 'features/windows/panel';
@@ -31,6 +32,7 @@ export function Top() {
 					<WindowContentCtl />
 					<ShadowCtl />
 					<BorderCtl />
+					<AlphaCtl />
 				</div>
 
 				<div label="Status bars">

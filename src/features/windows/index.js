@@ -7,6 +7,7 @@ import { selectWindowContent, selectWindowContentCSS } from 'features/window_con
 import TitleBar from 'features/title_bars';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
+import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
 
 
 export default function Windows() {
@@ -18,10 +19,12 @@ export default function Windows() {
   const windowContentStyle = useSelector(selectWindowContentCSS);
   const shadowStyle = useSelector(selectShadowStyleCSS);
   const borderStyle = useSelector(selectBorderStyle);
-	let style = {...shadowStyle, ...borderStyle, ...windowContentStyle};
+  const alphaStyle = useSelector(selectAlphaStyle);
+	let style = {...shadowStyle, ...borderStyle, ...windowContentStyle, ...alphaStyle};
 
   const borderFocusStyle = useSelector(selectBorderFocusStyle);
-	let focusStyle = Object.assign({}, style, borderFocusStyle);
+  const alphaFocusStyle = useSelector(selectAlphaFocusStyle);
+	let focusStyle = Object.assign({}, style, borderFocusStyle, alphaFocusStyle);
 
 	return (
 		positions.map((position, key) => {

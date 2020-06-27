@@ -7,6 +7,7 @@ import tabReducer from 'components/tabs/slice';
 import backgroundReducer from 'features/background/slice';
 import windowReducer from 'features/windows/slice';
 import windowContentReducer from 'features/window_content/slice';
+import alphaReducer from 'features/alpha/slice';
 import shadowReducer from 'features/shadows/slice';
 import borderReducer from 'features/borders/slice';
 import titleBarReducer from 'features/title_bars/slice';
@@ -18,6 +19,7 @@ const reducer = combineReducers({
 	background: backgroundReducer,
 	windows: windowReducer,
 	windowContent: windowContentReducer,
+	alpha: alphaReducer,
 	titleBars: titleBarReducer,
 	shadows: shadowReducer,
 	borders: borderReducer,
