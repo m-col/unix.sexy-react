@@ -18,4 +18,9 @@
 
 .optbox input {
     width: 40px;
+    margin-left: 10px;
+}
+
+.optbox input.colour {
+    width: 60px;
 }

@@ -23,6 +23,7 @@ export function BackgroundCtl() {
 					type="file"
 					accept="image/*"
 					multiple="false"
+					style={{width:"112px", marginLeft:"0"}}
 					onChange={e => {
 						if (e.target.files[0]) {
 							let reader = new FileReader();
