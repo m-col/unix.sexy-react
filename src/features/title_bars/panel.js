@@ -20,36 +20,33 @@ export function TitleBarCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<OptBox className="titleBarCtl" label="Title Bars">
+		<OptBox className="titleBarCtl" label="Title Bars" width="340px">
 
 			<div>
 				Enabled
 				<Switch value={style.enabled} callback={toggle} />
 
-				Colour
-				<Colour value={style.colour} onChange={setColour} />
-			</div>
-
-			<div>
-				Text colour
-				<Colour value={style.textColour} onChange={setTextColour} />
-			</div>
-
-			<div>
-				Focussed colour
-				<Colour value={style.colourFocus} onChange={setColourFocus} />
-
-				Focussed text colour
-				<Colour value={style.textColourFocus} onChange={setTextColourFocus} />
-			</div>
-
-
-			<div>
 				Width
 				<input value={style.width} type="number" min="0"
 					onChange={e => dispatch(setWidth(e.target.value))}
 				/>
 			</div>
+
+			<div>
+				Colour
+				<Colour value={style.colour} onChange={setColour} />
+				Text
+				<Colour value={style.textColour} onChange={setTextColour} />
+			</div>
+
+			<div>
+				Focussed
+				<Colour value={style.colourFocus} onChange={setColourFocus} />
+
+				Text
+				<Colour value={style.textColourFocus} onChange={setTextColourFocus} />
+			</div>
+
 
 		</OptBox>
 	);

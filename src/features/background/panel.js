@@ -11,7 +11,7 @@ export function BackgroundCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<OptBox className="BackgroundCtl" label="Background / Wallpaper">
+		<OptBox className="BackgroundCtl" label="Background / Wallpaper" width="260px">
 
 			<div>
 				Colour

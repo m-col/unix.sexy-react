@@ -19,7 +19,7 @@ export function ShadowCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<OptBox className="shadowCtl" label="Shadows">
+		<OptBox className="shadowCtl" label="Shadows" width="260px">
 
 			<div>
 				Enabled

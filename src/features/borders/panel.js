@@ -17,7 +17,7 @@ export function BorderCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<OptBox className="BorderCtl" label="Borders">
+		<OptBox className="BorderCtl" label="Borders" width="260px">
 
 			<div>
 				Width

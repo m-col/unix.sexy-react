@@ -17,7 +17,7 @@ export function WindowContentCtl() {
   const windowContent = useSelector(selectWindowContent);
 
 	return (
-		<OptBox className="WindowContentCtl" label="Window Content">
+		<OptBox className="WindowContentCtl" label="Window Content" width="240px">
 
 			<div>
 				Colour
