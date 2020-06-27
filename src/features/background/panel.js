@@ -15,7 +15,7 @@ export function BackgroundCtl() {
 	return (
 		<OptBox className="BackgroundCtl" label="Background / Wallpaper">
 
-			<div className="opt">
+			<div>
 				Colour
 				<input
 					value={inputColour}
@@ -37,7 +37,7 @@ export function BackgroundCtl() {
 				</button>
 			</div>
 
-			<div className="opt">
+			<div>
 				<input
 					type="file"
 					accept="image/*"
@@ -57,7 +57,7 @@ export function BackgroundCtl() {
 				/>
 			</div>
 
-			<div className="opt">
+			<div>
 				<ul>
 					<li>wallpaper saturation</li>
 					<li>wallpaper tint</li>

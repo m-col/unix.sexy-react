@@ -20,21 +20,21 @@ export function BorderCtl() {
 	return (
 		<OptBox className="BorderCtl" label="Borders">
 
-			<div className="opt">
+			<div>
 				Corner radius
 				<input value={style.borderRadius} type="number" min={0}
 					onChange={e => dispatch(setBorderRadius(e.target.value))}
 				/>
 			</div>
 
-			<div className="opt">
+			<div>
 				Width
 				<input value={style.borderWidth} type="number" min={0}
 					onChange={e => dispatch(setBorderWidth(e.target.value))}
 				/>
 			</div>
 
-			<div className="opt">
+			<div>
 				Colour
 				<input value={style.borderColor}
 					onChange={e => dispatch(setBordorColor(e.target.value))}
@@ -48,7 +48,7 @@ export function BorderCtl() {
 				</ColorPicker>
 			</div>
 
-			<div className="opt">
+			<div>
 				Focussed colour
 				<input value={style.borderColorFocus}
 					onChange={e => dispatch(setBordorColorFocus(e.target.value))}
@@ -62,7 +62,7 @@ export function BorderCtl() {
 				</ColorPicker>
 			</div>
 
-			<div className="opt">
+			<div>
 				TODO: border styles
 			</div>
 

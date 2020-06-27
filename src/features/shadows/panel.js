@@ -22,7 +22,7 @@ export function ShadowCtl() {
 	return (
 		<OptBox className="shadowCtl" label="Shadows">
 
-			<div className="opt">
+			<div>
 				Enabled
 				<Switch
 					onClick={() => dispatch(toggleShadows())}
@@ -42,21 +42,21 @@ export function ShadowCtl() {
 				</ColorPicker>
 			</div>
 
-			<div className="opt">
+			<div>
 				Horizontal offset
 				<input value={style.hOffset} type="number" 
 					onChange={e => dispatch(setHOffset(e.target.value))}
 				/>
 			</div>
 
-			<div className="opt">
+			<div>
 				Vertical offset
 				<input value={style.vOffset} type="number" 
 					onChange={e => dispatch(setVOffset(e.target.value))}
 				/>
 			</div>
 
-			<div className="opt">
+			<div>
 				Blur radius
 				<input value={style.blur} type="number" min="0"
 					onChange={e => dispatch(setBlur(e.target.value))}

@@ -12,11 +12,11 @@
     margin: 0;
 }
 
-.opt {
+.optbox > div {
     width: 100%;
 }
 
-.opt input {
+.optbox input {
     width: 60px;
 }
 

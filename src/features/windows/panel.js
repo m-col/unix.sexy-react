@@ -10,13 +10,13 @@ export function WindowCtl() {
 
 	return (
 		<OptBox className="WindowCtl" label="Todos">
-			<div className="opt">
+			<div>
 				<ul>
 					<li>Transparency + blur</li>
 				</ul>
 			</div>
 
-			<div className="opt">
+			<div>
 				Number
 				<button onClick={() => dispatch(addWindow())}> + </button>
 				<button onClick={() => dispatch(delWindow())}> - </button>

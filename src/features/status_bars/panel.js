@@ -6,7 +6,7 @@ import OptBox from 'components/optbox';
 export function StatusBarCtl() {
 	return (
 		<OptBox className="StatusBarCtl" label="Todos">
-			<div className="opt">
+			<div>
 				<ul>
 					<li>polybar</li>
 					<li>lemonbar</li>

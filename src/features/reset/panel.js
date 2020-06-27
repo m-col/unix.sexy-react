@@ -10,7 +10,7 @@ export function ResetCtl() {
 
   return (
 		<OptBox className="ResetCtl" label="Reset state">
-			<div className="opt">
+			<div>
 				<button onClick={() => dispatch(reset())}>
 					Reset
 				</button>

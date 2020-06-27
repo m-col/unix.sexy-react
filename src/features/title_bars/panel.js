@@ -23,7 +23,7 @@ export function TitleBarCtl() {
 	return (
 		<OptBox className="titleBarCtl" label="Title Bars">
 
-			<div className="opt">
+			<div>
 				Enabled
 				<Switch
 					onClick={() => dispatch(toggle())}
@@ -43,7 +43,7 @@ export function TitleBarCtl() {
 				</ColorPicker>
 			</div>
 
-			<div className="opt">
+			<div>
 				Text colour
 				<input value={style.textColour}
 					onChange={e => dispatch(setTextColour(e.target.value))}
@@ -57,7 +57,7 @@ export function TitleBarCtl() {
 				</ColorPicker>
 			</div>
 
-			<div className="opt">
+			<div>
 				Focussed colour
 				<input value={style.colourFocus}
 					onChange={e => dispatch(setColourFocus(e.target.value))}
@@ -84,7 +84,7 @@ export function TitleBarCtl() {
 			</div>
 
 
-			<div className="opt">
+			<div>
 				Width
 				<input value={style.width} type="number" min="1"
 					onChange={e => dispatch(setWidth(e.target.value))}

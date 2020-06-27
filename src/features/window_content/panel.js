@@ -22,7 +22,7 @@ export function WindowContentCtl() {
 	return (
 		<OptBox className="WindowContentCtl" label="Window Content">
 
-			<div className="opt">
+			<div>
 				Colour
 				<input
 					value={colour}
@@ -43,7 +43,7 @@ export function WindowContentCtl() {
 				</button>
 			</div>
 
-			<div className="opt">
+			<div>
 				Text
 				<Switch
 					onClick={() => dispatch(toggleText())}
@@ -51,7 +51,7 @@ export function WindowContentCtl() {
 				/>
 			</div>
 
-			<div className="opt">
+			<div>
 				Text colour
 				<input
 					value={textColour}
@@ -73,7 +73,7 @@ export function WindowContentCtl() {
 				</button>
 			</div>
 			
-			<div className="opt">
+			<div>
 				Padding
 				<input value={windowContent.padding} type="number" min="0"
 					onChange={e => dispatch(setPadding(e.target.value))}
