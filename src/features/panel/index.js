@@ -9,6 +9,7 @@ import './index.css';
 
 
 // Panel contents
+import { About } from 'features/about/panel';
 import { AlphaCtl } from 'features/alpha/panel';
 import { BackgroundCtl } from 'features/background/panel';
 import { ResetCtl } from 'features/reset/panel';
@@ -20,7 +21,6 @@ import { BorderCtl } from 'features/borders/panel';
 import { StatusBarCtl } from 'features/status_bars/panel';
 import { LauncherCtl } from 'features/launchers/panel';
 import { NotificationCtl } from 'features/notifications/panel';
-import { MiscCtl } from 'features/misc/panel';
 
 
 export function Panel() {
@@ -44,13 +44,17 @@ export function Panel() {
 				y: position.y
 			}}
 			size={{
-				width: "520px",  height: "204px"
+				width: "522px",  height: "204px"
 			}}
 			onDragStop={
 				(e, d) => {dispatch(dragPanel({x: d.x, y: d.y}))}
 			}
 		>
 			<Tabs>
+
+				<div label="About">
+					<About />
+				</div>
 
 				<div label="Settings">
 					<ResetCtl />
@@ -76,10 +80,6 @@ export function Panel() {
 
 				<div label="Notification">
 					<NotificationCtl />
-				</div>
-
-				<div label="Misc">
-					<MiscCtl />
 				</div>
 
 			</Tabs>

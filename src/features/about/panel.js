@@ -3,13 +3,11 @@ import React from 'react';
 import OptBox from 'components/optbox';
 
 
-export function MiscCtl() {
+export function About() {
 	return (
-		<OptBox className="MiscCtl" label="Todos">
+		<OptBox className="AboutCtl" label="About">
 			<div>
-				<ul>
-					<li>?</li>
-				</ul>
+				About stuff here
 			</div>
 		</OptBox>
 	);
