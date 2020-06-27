@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectPositions, dragWindow, resizeWindow } from './slice';
 import { selectWindowContent, selectWindowContentCSS } from 'features/window_content/slice';
 import TitleBar from 'features/title_bars';
+import WindowContent from 'features/window_content';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
 import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
@@ -13,7 +14,6 @@ import './index.css';
 export default function Windows() {
   const dispatch = useDispatch();
   const positions = useSelector(selectPositions);
-  const windowContent = useSelector(selectWindowContent);
   const [focussed, setFocus] = useState(0);
 
   const windowContentStyle = useSelector(selectWindowContentCSS);
@@ -54,21 +54,11 @@ export default function Windows() {
 					onClick={() => setFocus(key)}
 				>
 
-				<TitleBar
-					focussed={(key === focussed)}
-				/>
+					<TitleBar
+						focussed={(key === focussed)}
+					/>
 
-				<div
-					className="window-content"
-					style={{
-						padding: `${windowContent.padding}px`,
-					}}>
-					{windowContent.text &&
-						<div className="window-text">
-							sample text here
-						</div>
-					}
-				</div>
+					<WindowContent />
 
 				</Rnd>
 			)
