@@ -1,4 +1,8 @@
 import React from 'react';
+import { Rnd } from 'react-rnd';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { dragPanel, selectPanel } from './slice';
 
 import Tabs from 'components/tabs/panel';
 
@@ -14,11 +18,29 @@ import { StatusBarCtl } from 'features/status_bars/panel';
 import { LauncherCtl } from 'features/launchers/panel';
 import { NotificationCtl } from 'features/notifications/panel';
 import { MiscCtl } from 'features/misc/panel';
+import './index.css';
 
 
-export function Top() {
+export function Panel() {
+  const dispatch = useDispatch();
+  const position = useSelector(selectPanel);
+
 	return (
-		<div id="Top">
+		<Rnd
+			bounds="parent"
+			id="Panel"
+			enableResizing={false}
+			position={{
+				x: position.x,
+				y: position.y
+			}}
+			size={{
+				width: "520px",  height: "212px"
+			}}
+			onDragStop={
+				(e, d) => {dispatch(dragPanel({x: d.x, y: d.y}))}
+			}
+		>
 			<Tabs>
 
 				<div label="Settings">
@@ -52,6 +74,8 @@ export function Top() {
 				</div>
 
 			</Tabs>
-		</div>
+		</Rnd>
 	);
 }
+
+export default Panel;

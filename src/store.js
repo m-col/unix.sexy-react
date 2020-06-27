@@ -3,6 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 
 import tabReducer from 'components/tabs/slice';
+import panelReducer from 'features/panel/slice';
 
 import backgroundReducer from 'features/background/slice';
 import windowReducer from 'features/windows/slice';
@@ -16,6 +17,7 @@ import { RESET } from 'features/reset/slice';
 
 const reducer = combineReducers({
 	tab: tabReducer,
+	panel: panelReducer,
 	background: backgroundReducer,
 	windows: windowReducer,
 	windowContent: windowContentReducer,

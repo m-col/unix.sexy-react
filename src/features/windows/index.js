@@ -8,7 +8,7 @@ import TitleBar from 'features/title_bars';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
 import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
-
+import './index.css';
 
 export default function Windows() {
   const dispatch = useDispatch();

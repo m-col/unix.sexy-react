@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { selectBackground } from 'features/background/slice';
 import Wallpaper from 'features/background';
 import Windows from 'features/windows';
+import Panel from 'features/panel';
+import './index.css';
 
 
 export function Desktop() {
@@ -12,6 +14,7 @@ export function Desktop() {
 	return (
 		<div id="Desktop" style={{backgroundColor: background.colour}}>
 			<Wallpaper />
+			<Panel />
 			<Windows />
 		</div>
 	);

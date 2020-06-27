@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import 'index.css';
-import App from './App';
+import Desktop from 'features/desktop';
 import { store, persistor } from 'store';
 import * as serviceWorker from 'serviceWorker';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -13,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
-				<App />
+				<Desktop />
 			</PersistGate>
     </Provider>
   </React.StrictMode>,

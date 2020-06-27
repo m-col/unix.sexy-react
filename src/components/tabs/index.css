@@ -1,11 +1,10 @@
 .tabs {
-    height: 192px;
+    height: 214px;
 }
 
 .tab-list {
     padding: 0;
     margin: 0;
-    width: 100%;
 }
 
 .tab-list-item {
@@ -20,6 +19,9 @@
 }
 
 .tab-content {
-    width: 100%;
-    height: 153px;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 175px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
