@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { fixColour } from 'features/helpers';
 import './index.css';
 
 

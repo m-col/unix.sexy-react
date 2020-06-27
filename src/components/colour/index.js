@@ -3,8 +3,15 @@ import { useDispatch } from 'react-redux';
 import ColorPicker from 'rc-color-picker';
 import 'rc-color-picker/assets/index.css';
 
-import { fixColour } from 'features/helpers';
 import './index.css';
+
+
+function fixColour(colour) {
+		if (colour[0] !== '#') {
+			colour = '#' + colour
+		}
+		return colour
+}
 
 
 export default function Colour(props) {
