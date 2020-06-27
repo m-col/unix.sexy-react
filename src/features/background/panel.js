@@ -1,40 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ColorPicker from 'rc-color-picker';
-import 'rc-color-picker/assets/index.css';
 
 import { setBackground, selectBackground, setWallpaper } from './slice';
+import Colour from 'components/colour';
 import OptBox from 'components/optbox';
 
 
 export function BackgroundCtl() {
   const backgroundColour = useSelector(selectBackground);
   const dispatch = useDispatch();
-  const [inputColour, setInputColour] = useState(backgroundColour);
 
 	return (
 		<OptBox className="BackgroundCtl" label="Background / Wallpaper">
 
 			<div>
 				Colour
-				<input
-					value={inputColour}
-					onChange={e => setInputColour(e.target.value)}
-				/>
-
-				<ColorPicker
-					color={inputColour}
-					onChange={c => {
-						setInputColour(c.color)
-						dispatch(setBackground(inputColour))
-					}}
-					enableAlpha="false"
-				>
-				</ColorPicker>
-
-				<button onClick={() => dispatch(setBackground(inputColour))}>
-					Set
-				</button>
+				<Colour value={backgroundColour} callback={setBackground} />
 			</div>
 
 			<div>
@@ -42,9 +23,6 @@ export function BackgroundCtl() {
 					type="file"
 					accept="image/*"
 					multiple="false"
-					style={{
-						width: 'auto'
-					}}
 					onChange={e => {
 						if (e.target.files[0]) {
 							let reader = new FileReader();

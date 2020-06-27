@@ -1,15 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ColorPicker from 'rc-color-picker';
-import 'rc-color-picker/assets/index.css';
 
 import {
 	setBorderRadius,
 	setBorderWidth,
-	setBordorColor,
-	setBordorColorFocus,
+	setBorderColor,
+	setBorderColorFocus,
 	selectBorderStyle,
 } from './slice';
+import Colour from 'components/colour';
 import OptBox from 'components/optbox';
 
 
@@ -21,13 +20,6 @@ export function BorderCtl() {
 		<OptBox className="BorderCtl" label="Borders">
 
 			<div>
-				Corner radius
-				<input value={style.borderRadius} type="number" min={0}
-					onChange={e => dispatch(setBorderRadius(e.target.value))}
-				/>
-			</div>
-
-			<div>
 				Width
 				<input value={style.borderWidth} type="number" min={0}
 					onChange={e => dispatch(setBorderWidth(e.target.value))}
@@ -35,35 +27,20 @@ export function BorderCtl() {
 			</div>
 
 			<div>
-				Colour
-				<input value={style.borderColor}
-					onChange={e => dispatch(setBordorColor(e.target.value))}
+				Corner radius
+				<input value={style.borderRadius} type="number" min={0}
+					onChange={e => dispatch(setBorderRadius(e.target.value))}
 				/>
-				<ColorPicker
-					color={style.borderColor}
-					onChange={c => {
-						dispatch(setBordorColor(c.color))
-					}}
-				>
-				</ColorPicker>
+			</div>
+
+			<div>
+				Colour
+				<Colour value={style.borderColor} callback={setBorderColor} />
 			</div>
 
 			<div>
 				Focussed colour
-				<input value={style.borderColorFocus}
-					onChange={e => dispatch(setBordorColorFocus(e.target.value))}
-				/>
-				<ColorPicker
-					color={style.borderColorFocus}
-					onChange={c => {
-						dispatch(setBordorColorFocus(c.color))
-					}}
-				>
-				</ColorPicker>
-			</div>
-
-			<div>
-				TODO: border styles
+				<Colour value={style.borderColorFocus} callback={setBorderColorFocus} />
 			</div>
 
 		</OptBox>

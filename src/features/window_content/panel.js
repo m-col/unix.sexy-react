@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ColorPicker from 'rc-color-picker';
-import 'rc-color-picker/assets/index.css';
 
 import {
 	setColour,
@@ -9,6 +7,7 @@ import {
 	setTextColour,
 	setPadding, selectWindowContent
 } from './slice';
+import Colour from 'components/colour';
 import OptBox from 'components/optbox';
 import Switch from 'components/switch';
 
@@ -16,61 +15,23 @@ import Switch from 'components/switch';
 export function WindowContentCtl() {
   const dispatch = useDispatch();
   const windowContent = useSelector(selectWindowContent);
-  const [colour, setInputColour] = useState(windowContent.colour);
-  const [textColour, setInputTextColour] = useState(windowContent.textColour);
 
 	return (
 		<OptBox className="WindowContentCtl" label="Window Content">
 
 			<div>
 				Colour
-				<input
-					value={colour}
-					onChange={e => setInputColour(e.target.value)}
-				/>
-
-				<ColorPicker
-					color={colour}
-					onChange={c => {
-						setInputColour(c.color)
-						dispatch(setColour(colour))
-					}}
-				>
-				</ColorPicker>
-
-				<button onClick={() => dispatch(setColour(colour))}>
-					Set
-				</button>
+				<Colour value={windowContent.colour} onChange={setColour} />
 			</div>
 
 			<div>
 				Text
-				<Switch
-					onClick={() => dispatch(toggleText())}
-					value={windowContent.text}
-				/>
+				<Switch value={windowContent.text} callback={toggleText} />
 			</div>
 
 			<div>
 				Text colour
-				<input
-					value={textColour}
-					onChange={e => setInputTextColour(e.target.value)}
-				/>
-
-				<ColorPicker
-					color={textColour}
-					onChange={c => {
-						setInputTextColour(c.color)
-						dispatch(setTextColour(textColour))
-					}}
-					enableAlpha="false"
-				>
-				</ColorPicker>
-
-				<button onClick={() => dispatch(setTextColour(textColour))}>
-					Set
-				</button>
+				<Colour value={windowContent.textColour} callback={setTextColour} />
 			</div>
 			
 			<div>

@@ -19,10 +19,10 @@ export const borderSlice = createSlice({
     setBorderWidth: (state, value) => {
 			state.borderWidth = Number(value.payload)
     },
-    setBordorColor: (state, value) => {
+    setBorderColor: (state, value) => {
 			state.borderColor = value.payload
     },
-    setBordorColorFocus: (state, value) => {
+    setBorderColorFocus: (state, value) => {
 			state.borderColorFocus = value.payload
     },
   },
@@ -31,8 +31,8 @@ export const borderSlice = createSlice({
 export const {
 	setBorderRadius,
 	setBorderWidth,
-	setBordorColor,
-	setBordorColorFocus,
+	setBorderColor,
+	setBorderColorFocus,
 } = borderSlice.actions;
 
 export const selectBorderStyle = state => state.borders;

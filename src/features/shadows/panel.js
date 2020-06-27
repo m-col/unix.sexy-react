@@ -1,7 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ColorPicker from 'rc-color-picker';
-import 'rc-color-picker/assets/index.css';
 
 import {
 	toggleShadows,
@@ -11,6 +9,7 @@ import {
 	setBlur,
 	setColour,
 } from './slice';
+import Colour from 'components/colour';
 import OptBox from 'components/optbox';
 import Switch from 'components/switch';
 
@@ -24,22 +23,10 @@ export function ShadowCtl() {
 
 			<div>
 				Enabled
-				<Switch
-					onClick={() => dispatch(toggleShadows())}
-					value={style.enabled}
-				/>
+				<Switch callback={toggleShadows} value={style.enabled} />
 
 				Colour
-				<input value={style.colour}
-					onChange={e => dispatch(setColour(e.target.value))}
-				/>
-				<ColorPicker
-					color={style.colour}
-					onChange={c => {
-							dispatch(setColour(c.color))
-						}}
-					>
-				</ColorPicker>
+				<Colour callback={style.colour} value={setColour} />
 			</div>
 
 			<div>

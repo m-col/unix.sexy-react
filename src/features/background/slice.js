@@ -1,23 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fixColour } from 'features/helpers';
-
 
 export const backgroundSlice = createSlice({
 	name: 'background',
 
 	initialState: {
-		value: '#5d479d',
+		colour: '#5d479d',
 		wallpaper: "",
 	},
 
 	reducers: {
 		setBackground: (state, input) => {
-			let colour = fixColour(input.payload)
-			if (colour) {
-				state.value = colour;
-				state.wallpaper = null;
-			}
+			state.colour = input.payload;
+			state.wallpaper = null;
 		},
 
 		setWallpaper: (state, image) => {
@@ -27,6 +22,9 @@ export const backgroundSlice = createSlice({
 });
 
 export const { setBackground, setWallpaper } = backgroundSlice.actions;
-export const selectBackground = state => state.background.value;
+
+export const selectBackground = state => state.background.colour;
+
 export const selectWallpaper = state => state.background.wallpaper;
+
 export default backgroundSlice.reducer;

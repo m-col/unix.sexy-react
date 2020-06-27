@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fixColour } from 'features/helpers';
-
 
 export const windowContentSlice = createSlice({
   name: 'windowContent',
@@ -15,7 +13,7 @@ export const windowContentSlice = createSlice({
 
   reducers: {
 		setColour: (state, input) => {
-			let colour = fixColour(input.payload)
+			let colour = input.payload
 			if (colour) {
 				state.colour = colour;
 			}
@@ -26,7 +24,7 @@ export const windowContentSlice = createSlice({
     },
 
 		setTextColour: (state, input) => {
-			let colour = fixColour(input.payload)
+			let colour = input.payload
 			if (colour) {
 				state.textColour = colour;
 			}
