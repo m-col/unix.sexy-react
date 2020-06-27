@@ -14,6 +14,7 @@ export default function Colour(props) {
 		<>
 			<input value={props.value}
 				onChange={e => dispatch(props.callback(fixColour(e.target.value)))}
+				style={{width: "60px"}}
 			/>
 			<ColorPicker
 				color={props.value}

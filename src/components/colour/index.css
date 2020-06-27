@@ -1,25 +1,3 @@
-.optbox {
-    border: 2px solid #eee;
-    width: 300px;
-    float: left;
-    height: 100%;
-    margin: 2px;
-}
-
-.optbox h3 {
-    font-size: 100%;
-    text-align: center;
-    margin: 0;
-}
-
-.optbox > div {
-    width: 100%;
-}
-
-.optbox input {
-    width: 60px;
-}
-
 span.rc-color-picker-trigger {
     border: 2px solid #ddd;
     display: initial;

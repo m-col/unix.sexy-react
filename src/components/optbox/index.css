@@ -17,11 +17,5 @@
 }
 
 .optbox input {
-    width: 60px;
-}
-
-span.rc-color-picker-trigger {
-    border: 2px solid #ddd;
-    display: initial;
-    padding: 5px 14px;
+    width: 40px;
 }
