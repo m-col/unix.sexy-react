@@ -1,0 +1,21 @@
+.window-content {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+.window-content textarea {
+    font-size: 80%;
+    width: 100%;
+    height: 100%;
+    margin: none;
+    border: none;
+    padding: 0;
+    resize: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.window-content textarea::-webkit-scrollbar {
+    display: none; /* FF */
+}

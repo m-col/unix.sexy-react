@@ -7,7 +7,6 @@ import WindowContent from 'features/window_content';
 import './index.css';
 
 import { selectPositions, dragWindow, resizeWindow } from './slice';
-import { selectWindowContentCSS } from 'features/window_content/slice';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
 import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
@@ -20,7 +19,6 @@ export default function Windows() {
 
 	const style = {
 		...useSelector(selectShadowStyleCSS),
-		...useSelector(selectWindowContentCSS),
 		...useSelector(selectBorderStyle),
 		...useSelector(selectAlphaStyle),
 	};
