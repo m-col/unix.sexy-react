@@ -24,7 +24,11 @@ export default function WindowContent(props) {
 
 	var text = "";
 	if (props.id === 0) {
-		text = "[charlie@chocfactory ~]$ sb () {\n> sed 's/.*/\L&/g; s/\(.\{1\}\)\(.\)/\\1\U\\2/g' <<< \"$@\"\n> }\n[charlie@chocfactory ~]$ sb btw i use arch\nbTw i uSe aRcH";
+		text = "[charlie@chocfactory ~]$ sb () {\n"
+				 + "> sed 's/.*/\\L&/g; s/\\(.\\{1\\}\\)\\(.\\)/\\1\\U\\2/g' <<< \"$@\"\n"
+				 + "> }\n"
+				 + "[charlie@chocfactory ~]$ sb btw i use arch\n"
+				 + "bTw i uSe aRcH";
 	};
 
 	return (

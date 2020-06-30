@@ -1,12 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { selectWindowContent } from 'features/window_content/slice';
 import './index.css';
 
 
 export default function OptBox(props) {
-  const dispatch = useDispatch();
 	const windowContent  = useSelector(selectWindowContent);
 
 	return (
