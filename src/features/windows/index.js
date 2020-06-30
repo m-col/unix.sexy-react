@@ -46,6 +46,9 @@ export default function Windows() {
 					position={{
 						x: position.x, y: position.y
 					}}
+				  onDragStart={
+						() => setFocus(id)
+					}
 				  onDragStop={
 						(e, d) => {dispatch(dragWindow({id: id, x: d.x, y: d.y}))}
 					}
