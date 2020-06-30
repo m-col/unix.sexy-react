@@ -26,13 +26,13 @@ export const windowSlice = createSlice({
     },
 
     dragWindow: (state, action) => {
-			state[action.payload.key].x = action.payload.x
-			state[action.payload.key].y = action.payload.y
+			state[action.payload.id].x = action.payload.x
+			state[action.payload.id].y = action.payload.y
     },
 
     resizeWindow: (state, action) => {
-			state[action.payload.key].width += action.payload.d.width
-			state[action.payload.key].height += action.payload.d.height
+			state[action.payload.id].width += action.payload.d.width
+			state[action.payload.id].height += action.payload.d.height
     },
   },
 });

@@ -31,7 +31,7 @@ export default function Windows() {
 	};
 
 	return (
-		positions.map((position, key) => {
+		positions.map((position, id) => {
 			return (
 				<Rnd
 					bounds="parent"
@@ -47,22 +47,22 @@ export default function Windows() {
 						x: position.x, y: position.y
 					}}
 				  onDragStop={
-						(e, d) => {dispatch(dragWindow({key: key, x: d.x, y: d.y}))}
+						(e, d) => {dispatch(dragWindow({key: id, x: d.x, y: d.y}))}
 					}
 					onResizeStop={
-						(e, dir, ref, d, pos) => {dispatch(resizeWindow({key: key, d:d }))}
+						(e, dir, ref, d, pos) => {dispatch(resizeWindow({key: id, d:d }))}
 					}
-					id={key}
+					id={id}
 					className="Window"
-					style={(key === focussed) ? focusStyle : style}
-					onClick={() => setFocus(key)}
+					style={(id === focussed) ? focusStyle : style}
+					onClick={() => setFocus(id)}
 				>
 
 					<TitleBar
-						focussed={(key === focussed)}
+						focussed={(id === focussed)}
 					/>
 
-					<WindowContent />
+					<WindowContent id={id}/>
 
 				</Rnd>
 			)

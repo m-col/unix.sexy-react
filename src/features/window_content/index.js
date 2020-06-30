@@ -22,16 +22,17 @@ export default function WindowContent(props) {
 		style.height = `calc(100% - ${titleBars.width}px)`
 	};
 
-	//let text = "[charlie@chocfactory ~]$\n[charlie@chocfactory ~]$ scrot";
-
-	let text = "[charlie@chocfactory ~]$ sb () {\n> sed 's/.*/\L&/g; s/\(.\{1\}\)\(.\)/\\1\U\\2/g' <<< \"$@\"\n> }\n[charlie@chocfactory ~]$ sb btw i use arch\nbTw i uSe aRcH";
-
+	var text = "";
+	if (props.id === 0) {
+		text = "[charlie@chocfactory ~]$ sb () {\n> sed 's/.*/\L&/g; s/\(.\{1\}\)\(.\)/\\1\U\\2/g' <<< \"$@\"\n> }\n[charlie@chocfactory ~]$ sb btw i use arch\nbTw i uSe aRcH";
+	};
 
 	return (
 		<div
 			className="window-content"
 			style={style}
 		>
+		{windowContent.text &&
 			<textarea
 				style={{
 					...windowContentCSS,
@@ -39,6 +40,7 @@ export default function WindowContent(props) {
 			>
 				{text}
 			</textarea>
+		}
 		</div>
 	);
 };
