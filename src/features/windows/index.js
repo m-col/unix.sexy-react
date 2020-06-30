@@ -47,10 +47,10 @@ export default function Windows() {
 						x: position.x, y: position.y
 					}}
 				  onDragStop={
-						(e, d) => {dispatch(dragWindow({key: id, x: d.x, y: d.y}))}
+						(e, d) => {dispatch(dragWindow({id: id, x: d.x, y: d.y}))}
 					}
 					onResizeStop={
-						(e, dir, ref, d, pos) => {dispatch(resizeWindow({key: id, d:d }))}
+						(e, dir, ref, d, pos) => {dispatch(resizeWindow({id: id, d:d }))}
 					}
 					id={id}
 					className="Window"
