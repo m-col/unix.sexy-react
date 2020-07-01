@@ -1,5 +1,9 @@
 .switch {
     display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-left: 10px;
 }
 
 input.switch {
@@ -10,16 +14,16 @@ input.switch {
 .switch input {
     position: absolute;
     opacity: 0;
+    z-index: -1;
 }
 
 .switch input + label {
     margin: 1px;
     padding: 4px 6px;
     display: inline-block;
-    color: #fff;
     cursor: pointer;
 }
 
 .switch input:checked + label {
-    background: green;
+    background-color: rgba(255, 255, 255, 0.25);
 }
