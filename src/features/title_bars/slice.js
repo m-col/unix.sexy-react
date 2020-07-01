@@ -6,6 +6,7 @@ export const titleBarSlice = createSlice({
 
 	initialState: {
 		enabled: true,
+		position: "N",
 		colour: '#252133',
 		textColour: '#8d80d8',
 		colourFocus: '#8d80d8',
@@ -16,6 +17,9 @@ export const titleBarSlice = createSlice({
   reducers: {
     toggle: state => {
 			state.enabled = !state.enabled;
+    },
+    setPosition: (state, value) => {
+			state.position = value.payload
     },
     setColour: (state, value) => {
 			state.colour = value.payload
@@ -37,6 +41,7 @@ export const titleBarSlice = createSlice({
 
 export const {
 	toggle,
+	setPosition,
 	setColour,
 	setTextColour,
 	setColourFocus,

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
 	toggle,
+  setPosition,
 	setColour,
 	setTextColour,
 	setColourFocus,
@@ -12,6 +13,7 @@ import {
 } from './slice';
 import Colour from 'components/colour';
 import OptBox from 'components/optbox';
+import Option from 'components/option';
 import Switch from 'components/switch';
 
 
@@ -29,6 +31,19 @@ export function TitleBarCtl() {
 				Width
 				<input value={style.width} type="number" min="0"
 					onChange={e => dispatch(setWidth(e.target.value))}
+				/>
+			</div>
+
+			<div>
+				Window position
+				<Option
+					value={style.position}
+					options={[
+						{key: "N", callback: () => dispatch(setPosition("N"))},
+						{key: "E", callback: () => dispatch(setPosition("E"))},
+						{key: "S", callback: () => dispatch(setPosition("S"))},
+						{key: "W", callback: () => dispatch(setPosition("W"))},
+					]}
 				/>
 			</div>
 
