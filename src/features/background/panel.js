@@ -26,21 +26,24 @@ export function BackgroundCtl() {
 			</div>
 
 			<div>
-				<input
-					type="file"
-					accept="image/*"
-					multiple="false"
-					style={{width:"112px", marginLeft:"0"}}
-					onChange={e => {
-						if (e.target.files[0]) {
-							let reader = new FileReader();
-							reader.onload = (e) => {
-								dispatch(setWallpaper(e.target.result));
-							};
-							reader.readAsDataURL(e.target.files[0]);
-						}
-					}}
-				/>
+				<div className="file-input">
+					<div className="file-input-text">From file</div>
+					<input
+						type="file"
+						accept="image/*"
+						multiple="false"
+						style={{marginLeft: 0, padding: 0, border: 0, width: "100%"}}
+						onChange={e => {
+							if (e.target.files[0]) {
+								let reader = new FileReader();
+								reader.onload = (e) => {
+									dispatch(setWallpaper(e.target.result));
+								};
+								reader.readAsDataURL(e.target.files[0]);
+							}
+						}}
+					/>
+				</div>
 				<Button text="Remove" callback={removeWallpaper} />
 			</div>
 
