@@ -7,7 +7,6 @@ var nameCounter = 0;
 
 export default function Option(props) {
 	nameCounter += 1;
-	console.log(nameCounter)
 
 	return (
 		<div className="switch">

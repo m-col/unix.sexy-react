@@ -1,7 +1,6 @@
 .window-content {
-    position: absolute;
-    width: 100%;
     overflow: hidden;
+    display: inline-block;
 }
 
 .window-content textarea {

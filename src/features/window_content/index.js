@@ -14,12 +14,21 @@ export default function WindowContent(props) {
 	const style =	{
 		padding: `${windowContent.padding}px`,
 		boxSizing: "border-box",
-		height: "100%",
 		...windowContentCSS,
 	};
 
 	if (titleBars.enabled) {
-		style.height = `calc(100% - ${titleBars.width}px)`
+		if (titleBars.position === "N" || titleBars.position === "S") {
+			style.height = `calc(100% - ${titleBars.width}px)`
+			style.width = "100%";
+		} else {
+			style.height = "100%";
+			style.width = `calc(100% - ${titleBars.width}px)`;
+			if (titleBars.position === "W") {
+				style.left = titleBars.width;
+				style.top = 0;
+			};
+		};
 	};
 
 	var text = "";
@@ -37,11 +46,7 @@ export default function WindowContent(props) {
 			style={style}
 		>
 		{windowContent.text &&
-			<textarea
-				style={{
-					...windowContentCSS,
-				}}
-			>
+			<textarea style={windowContentCSS}>
 				{text}
 			</textarea>
 		}
