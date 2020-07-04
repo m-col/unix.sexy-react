@@ -1,0 +1,11 @@
+.AboutCtl > div {
+    margin: 8px;
+}
+
+.AboutCtl a {
+    color: inherit;
+}
+
+.AboutCtl h3 {
+    font-size: 120%;
+}

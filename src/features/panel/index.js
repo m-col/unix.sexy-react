@@ -54,10 +54,10 @@ export function Panel() {
 
 				<div label="About">
 					<About />
+					<ResetCtl />
 				</div>
 
 				<div label="Settings">
-					<ResetCtl />
 					<BackgroundCtl />
 				</div>
 
