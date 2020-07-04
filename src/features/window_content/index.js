@@ -13,6 +13,8 @@ export default function WindowContent(props) {
 
 	const style =	{
 		padding: `${windowContent.padding}px`,
+		width: "100%",
+		height: "100%",
 		boxSizing: "border-box",
 		...windowContentCSS,
 	};
@@ -20,9 +22,7 @@ export default function WindowContent(props) {
 	if (titleBars.enabled) {
 		if (titleBars.position === "N" || titleBars.position === "S") {
 			style.height = `calc(100% - ${titleBars.width}px)`
-			style.width = "100%";
 		} else {
-			style.height = "100%";
 			style.width = `calc(100% - ${titleBars.width}px)`;
 			if (titleBars.position === "W") {
 				style.left = titleBars.width;

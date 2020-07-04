@@ -12,7 +12,9 @@ export default function TitleBar(props) {
 		return null;
 	};
 
-	const style = {};
+	const style = {
+		lineHeight: `${titleBars.width}px`
+	};
 
 	if (props.focussed) {
 		style.backgroundColor = titleBars.colourFocus;
@@ -29,7 +31,8 @@ export default function TitleBar(props) {
 			style.position = "absolute";
 			style.bottom = 0;
 		};
-	} else {
+
+	} else { /* East and West */
 		style.height = "100%";
 		style.width = `${titleBars.width}px`;
 		if (titleBars.position === "E") {

@@ -11,7 +11,7 @@ export const titleBarSlice = createSlice({
 		textColour: '#8d80d8',
 		colourFocus: '#8d80d8',
 		textColourFocus: '#12101d',
-		width: 30,
+		width: 20,
 	},
 
   reducers: {
