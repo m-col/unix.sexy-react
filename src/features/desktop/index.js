@@ -11,8 +11,15 @@ import './index.css';
 export function Desktop() {
   const background = useSelector(selectBackground);
 
+	const style = {};
+	if (background.wallpaper) {
+		style.backgroundColor = background.tintColour;
+	} else {
+		style.backgroundColor = background.colour;
+	};
+
 	return (
-		<div id="Desktop" style={{backgroundColor: background.colour}}>
+		<div id="Desktop" style={style}>
 			<Wallpaper />
 			<Panel />
 			<Windows />

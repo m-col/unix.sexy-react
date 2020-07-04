@@ -52,12 +52,12 @@ export function Panel() {
 		>
 			<Tabs>
 
-				<div label="About">
+				<div label="A">
 					<About />
 					<ResetCtl />
 				</div>
 
-				<div label="Settings">
+				<div label="Background">
 					<BackgroundCtl />
 				</div>
 
