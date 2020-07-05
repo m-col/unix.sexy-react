@@ -35,7 +35,7 @@ function TabList(props) {
 			{props.children.map((child, i) => {
 				const { label } = child.props;
 
-				let className = 'tab-list-item';
+				let className = 'tab-list-item tab-list-' + label;
 				if (props.active === i) {
 					className += ' tab-list-active';
 				}
@@ -47,7 +47,7 @@ function TabList(props) {
 						style={style}
 						key={label}
 					>
-						{label}
+						{label === "About" ? <div className="square" style={{backgroundColor: style.color}}/> : label}
 					</li>
 				);
 			})}

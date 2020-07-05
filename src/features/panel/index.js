@@ -52,7 +52,7 @@ export function Panel() {
 		>
 			<Tabs>
 
-				<div label="A">
+				<div label="About">
 					<About />
 					<ResetCtl />
 				</div>

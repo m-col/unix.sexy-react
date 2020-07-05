@@ -31,3 +31,15 @@
 h3 {
     font-weight:normal;
 }
+
+.tab-list-About {
+    padding: 0.5rem 0.7rem;
+}
+
+.square {
+    height: 15px;
+    width: 15px;
+    background-color: #f33;
+    display: inline-block;
+    vertical-align: middle;
+}
