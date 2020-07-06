@@ -1,4 +1,10 @@
 .Window {
     border-style: solid;
     overflow: hidden;
+    z-index: 1;
+}
+
+.WindowCtl button {
+    width: 40px;
+    margin: 0 8px;
 }

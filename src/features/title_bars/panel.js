@@ -22,7 +22,7 @@ export function TitleBarCtl() {
   const dispatch = useDispatch();
 
 	return (
-		<OptBox className="titleBarCtl" label="Title Bars" width="340px">
+		<OptBox className="titleBarCtl" label="Title Bars" width="360px">
 
 			<div>
 				Enabled
@@ -35,7 +35,7 @@ export function TitleBarCtl() {
 			</div>
 
 			<div>
-				Window position
+				Position
 				<Option
 					value={style.position}
 					options={[

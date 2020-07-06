@@ -27,7 +27,7 @@ export default function Windows() {
 		...style,
 		...useSelector(selectBorderFocusStyle),
 		...useSelector(selectAlphaFocusStyle),
-		zIndex: 1,
+		zIndex: 2,
 	};
 
 	return (
