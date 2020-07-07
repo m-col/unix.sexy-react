@@ -12,6 +12,7 @@ import alphaReducer from 'features/alpha/slice';
 import shadowReducer from 'features/shadows/slice';
 import borderReducer from 'features/borders/slice';
 import titleBarReducer from 'features/title_bars/slice';
+import statusBarReducer from 'features/status_bars/slice';
 import { RESET } from 'features/reset/slice';
 
 
@@ -25,6 +26,7 @@ const reducer = combineReducers({
 	titleBars: titleBarReducer,
 	shadows: shadowReducer,
 	borders: borderReducer,
+	statusBars: statusBarReducer,
 })
 
 
