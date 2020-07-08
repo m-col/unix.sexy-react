@@ -14,7 +14,7 @@ export function StatusBarCtl() {
 
 	return (
 		<>
-			<OptBox className="StatusBarCtl" label="Bars" width={190}>
+			<OptBox className="StatusBarCtl" label="Status Bars" width={120}>
 
 				<div>
 					Top

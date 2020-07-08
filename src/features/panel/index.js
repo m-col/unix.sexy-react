@@ -56,21 +56,18 @@ export function Panel() {
 					<ResetCtl />
 				</div>
 
-				<div label="Background">
+				<div label="Settings">
 					<BackgroundCtl />
+					<StatusBarCtl />
+					<ShadowCtl />
 				</div>
 
 				<div label="Windows">
 					<WindowCtl />
 					<TitleBarCtl />
 					<WindowContentCtl />
-					<ShadowCtl />
 					<BorderCtl />
 					<AlphaCtl />
-				</div>
-
-				<div label="Status bars">
-					<StatusBarCtl />
 				</div>
 
 				<div label="Launchers">
