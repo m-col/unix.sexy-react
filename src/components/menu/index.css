@@ -1,0 +1,8 @@
+.context-menu {
+    position: fixed;
+}
+
+.has-context-menu {
+    height: 100%;
+    width: 100%;
+}

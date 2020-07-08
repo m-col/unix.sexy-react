@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { selectStatusBars } from './slice';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
+import ContextMenu from 'components/menu';
+import { Menu } from './menu';
 import './index.css';
 
 export default function StatusBar() {
@@ -30,7 +32,12 @@ export default function StatusBar() {
 	};
 
 	return (
-		<div className="status-bar" style={style}>
+		<div
+			className="status-bar"
+			style={style}
+		>
+			<ContextMenu menu={Menu}>
+			</ContextMenu>
 		</div>
 	);
 };
