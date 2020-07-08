@@ -27,7 +27,7 @@ export default function ContextMenu(props) {
 			className="context-menu"
 			style={{left: state.x, top: state.y, ...style}}
 		>
-			<props.menu/>
+			<props.menu id={props.id} />
 			<button
 				onClick={() => toggle({enabled: false, x: 0, y: 0})}
 				style={{color: style.color}}
