@@ -20,16 +20,16 @@ export function BackgroundCtl() {
 
 	return (
 		<>
-			<OptBox className="BackgroundCtl" label="Background" width="220px">
+			<OptBox className="BackgroundCtl" label="Background" width="260px">
 
 				<div>
 					Colour
 					<Colour value={background.colour} callback={setBackground} />
 				</div>
 
-			</OptBox>
-
-			<OptBox className="WallpaperCtl" label="Wallpaper" width="260px">
+				<div>
+					Wallpaper:
+				</div>
 
 				<div>
 					<div className="file-input">
