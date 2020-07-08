@@ -1,30 +1,34 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import {
-	setPosition,
+	toggle,
 	selectStatusBars,
 } from './slice';
 import OptBox from 'components/optbox';
-import Option from 'components/option';
+import Switch from 'components/switch';
 
 
 export function StatusBarCtl() {
-  const style = useSelector(selectStatusBars);
-  const dispatch = useDispatch();
+  const statusBars = useSelector(selectStatusBars);
 
 	return (
 		<>
 			<OptBox className="StatusBarCtl" label="Bars" width={190}>
 
 				<div>
-					<Option
-						value={style.position}
-						options={[
-							{key: "none", callback: () => dispatch(setPosition("none"))},
-							{key: "top", callback: () => dispatch(setPosition("top"))},
-							{key: "bottom", callback: () => dispatch(setPosition("bottom"))},
-						]}
+					Top
+					<Switch
+						value={statusBars.top.enabled}
+						callback={() => toggle("top")}
+					/>
+				</div>
+
+				<div>
+					Bottom
+					<Switch
+						value={statusBars.bottom.enabled}
+						callback={() => toggle("bottom")}
 					/>
 				</div>
 

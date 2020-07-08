@@ -7,37 +7,44 @@ import ContextMenu from 'components/menu';
 import Menu from './menu';
 import './index.css';
 
+
+const ids = ["top", "bottom"];
+
+
 export default function StatusBar() {
   const statusBars = useSelector(selectStatusBars);
 	const shadows = useSelector(selectShadowStyleCSS);
 
-	if (statusBars.position === "none") {
-		return null;
-	};
-
-	const style = {
-		width: `${statusBars.width}px`,
-		height: `${statusBars.height}px`,
-		backgroundColor: statusBars.backgroundColor,
-		color: statusBars.color,
-		left: `${statusBars.xOffset}px`,
-		borderRadius: `${statusBars.cornerRadius}px`,
-		...statusBars.shadows ? shadows : null,
-	};
-
-	if (statusBars.position === "top") {
-		style.top = `${statusBars.yOffset}px`;
-	} else {
-		style.bottom = `${statusBars.yOffset}px`;
-	};
-
 	return (
-		<div
-			className="status-bar"
-			style={style}
-		>
-			<ContextMenu menu={Menu}>
-			</ContextMenu>
-		</div>
+		ids.map((id, index) => {
+
+			if (!statusBars[id].enabled) {
+				return null;
+			}
+
+			let style = {
+				width: `${statusBars[id].width}px`,
+				height: `${statusBars[id].height}px`,
+				backgroundColor: statusBars[id].backgroundColor,
+				color: statusBars[id].color,
+				left: `${statusBars[id].xOffset}px`,
+				borderRadius: `${statusBars[id].cornerRadius}px`,
+				...statusBars[id].shadows ? shadows : null,
+			};
+			style[id] = `${statusBars[id].yOffset}px`;
+
+			return (
+				<>
+					<div
+						className="status-bar"
+						style={style}
+					>
+						<ContextMenu id={id} menu={Menu}>
+						</ContextMenu>
+					</div>
+				</>
+			);
+
+		})
 	);
 };

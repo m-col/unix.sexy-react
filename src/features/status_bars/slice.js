@@ -5,50 +5,63 @@ export const statusBarSlice = createSlice({
   name: 'statusBars',
 
 	initialState: {
-		position: "top",
-		width: window.innerWidth * 0.98,
-		height: 36,
-		backgroundColor: "#030405",
-		color: "#c5c5c8",
-		xOffset: window.innerWidth * 0.01,
-		yOffset: window.innerWidth * 0.01,
-		cornerRadius: 0,
-		shadows: true,
+		top: {
+			enabled: true,
+			width: window.innerWidth * 0.98,
+			height: 36,
+			backgroundColor: "#030405",
+			color: "#c5c5c8",
+			xOffset: window.innerWidth * 0.01,
+			yOffset: window.innerWidth * 0.01,
+			cornerRadius: 3,
+			shadows: true,
+		},
+		bottom: {
+			enabled: false,
+			width: window.innerWidth * 0.98,
+			height: 36,
+			backgroundColor: "#030405",
+			color: "#c5c5c8",
+			xOffset: window.innerWidth * 0.01,
+			yOffset: window.innerWidth * 0.01,
+			cornerRadius: 3,
+			shadows: true,
+		},
 	},
 
   reducers: {
-    setPosition: (state, value) => {
-			state.position = value.payload;
+    toggle: (state, value) => {
+			state[value.payload].enabled = !state[value.payload].enabled;
     },
     setWidth: (state, value) => {
-			state.width = value.payload;
+			state[value.payload.id].width = value.payload.value;
     },
     setHeight: (state, value) => {
-			state.height = value.payload;
+			state[value.payload.id].height = value.payload.value;
     },
     setColour: (state, value) => {
-			state.backgroundColor = value.payload;
+			state[value.payload.id].backgroundColor = value.payload.colour;
     },
     setTextColour: (state, value) => {
-			state.color = value.payload;
+			state[value.payload.id].color = value.payload.colour;
     },
     setXOffset: (state, value) => {
-			state.xOffset = value.payload;
+			state[value.payload.id].xOffset = value.payload.value;
     },
     setYOffset: (state, value) => {
-			state.yOffset = value.payload;
+			state[value.payload.id].yOffset = value.payload.value;
     },
     setCornerRadius: (state, value) => {
-			state.cornerRadius = value.payload;
+			state[value.payload.id].cornerRadius = value.payload.value;
     },
     toggleShadows: (state, value) => {
-			state.shadows = !state.shadows;
+			state[value.payload].shadows = !state[value.payload].shadows;
     },
   },
 });
 
 export const {
-	setPosition,
+	toggle,
   setWidth,
   setHeight,
 	setColour,
