@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
 	setColour,
@@ -8,19 +8,23 @@ import {
 } from './slice';
 import Colour from 'components/colour';
 import OptBox from 'components/optbox';
+import Switch from 'components/switch';
 
 
 export function Menu() {
-  const style = useSelector(selectStatusBars);
+  const statusBars = useSelector(selectStatusBars);
+  const dispatch = useDispatch();
 
 	return (
-		<OptBox width={190}>
-			<div>
-				Colour
-				<Colour value={style.backgroundColor} callback={setColour} />
-				Text
-				<Colour value={style.color} callback={setTextColour} />
-			</div>
-		</OptBox>
+		<div>
+			<OptBox width={190}>
+				<div>
+					Colour
+					<Colour value={statusBars.backgroundColor} callback={setColour} />
+					Text
+					<Colour value={statusBars.color} callback={setTextColour} />
+				</div>
+			</OptBox>
+		</div>
 	);
 };

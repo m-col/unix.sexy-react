@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectWindowContent } from 'features/window_content/slice';
+import { selectWindowContentCSS } from 'features/window_content/slice';
 import './index.css';
 
 
 export default function ContextMenu(props) {
-	const windowContent  = useSelector(selectWindowContent);
+	const style = useSelector(selectWindowContentCSS);
   const [state, toggle] = useState({enabled: false, x: 0, y:0});
 
 	const enable = (e) => {
@@ -25,12 +25,12 @@ export default function ContextMenu(props) {
 	return (
 		<div
 			className="context-menu"
-			style={{left: state.x, top: state.y}}
+			style={{left: state.x, top: state.y, ...style}}
 		>
 			<props.menu/>
 			<button
 				onClick={() => toggle({enabled: false, x: 0, y: 0})}
-				style={{color: windowContent.textColour}}
+				style={{color: style.color}}
 			>
 			Hide
 			</button>
