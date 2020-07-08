@@ -29,7 +29,6 @@ export function Panel() {
 
 	const style = {
 		...useSelector(selectShadowStyleCSS),
-		backgroundColor: "#ffffff",
 	};
 
 	return (
