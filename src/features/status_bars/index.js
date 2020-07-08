@@ -39,7 +39,7 @@ export default function StatusBar() {
 						className="status-bar"
 						style={style}
 					>
-						<ContextMenu id={id} menu={Menu}>
+						<ContextMenu id={id} menu={Menu} position={id === "bottom" ? "above" : "below"}>
 						</ContextMenu>
 					</div>
 				</>

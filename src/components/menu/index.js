@@ -6,7 +6,7 @@ import './index.css';
 
 
 export default function ContextMenu(props) {
-	const style = useSelector(selectWindowContentCSS);
+	const windowContextStyle = useSelector(selectWindowContentCSS);
   const [state, toggle] = useState({enabled: false, x: 0, y:0});
 
 	const enable = (e) => {
@@ -22,15 +22,25 @@ export default function ContextMenu(props) {
 		);
 	};
 
+	const style = {
+		left: state.x,
+		...windowContextStyle,
+	};
+	if (props.position == "above") {
+		style.bottom = window.innerHeight - state.y;
+	} else {
+		style.top = state.y;
+	};
+
 	return (
 		<div
 			className="context-menu"
-			style={{left: state.x, top: state.y, ...style}}
+			style={style}
 		>
 			<props.menu id={props.id} />
 			<button
 				onClick={() => toggle({enabled: false, x: 0, y: 0})}
-				style={{color: style.color}}
+				style={{color: windowContextStyle.color}}
 			>
 			Hide
 			</button>
