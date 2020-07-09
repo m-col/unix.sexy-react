@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectWindowContentCSS } from 'features/window_content/slice';
+import { selectShadowStyleCSS } from 'features/shadows/slice';
+import { selectBorderStyle } from 'features/borders/slice';
 import './index.css';
 
 
 export default function ContextMenu(props) {
 	const windowContextStyle = useSelector(selectWindowContentCSS);
+	const borderStyle = useSelector(selectBorderStyle);
+	const shadowStyle = useSelector(selectShadowStyleCSS);
   const [state, toggle] = useState({enabled: false, x: 0, y:0});
 
 	const enable = (e) => {
@@ -25,6 +29,8 @@ export default function ContextMenu(props) {
 	const style = {
 		left: state.x,
 		...windowContextStyle,
+		...borderStyle,
+		...shadowStyle,
 	};
 	if (props.position == "above") {
 		style.bottom = window.innerHeight - state.y;

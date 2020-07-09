@@ -1,5 +1,7 @@
 .context-menu {
     position: fixed;
+    z-index: 4;
+    border-style: solid;
 }
 
 .has-context-menu {
