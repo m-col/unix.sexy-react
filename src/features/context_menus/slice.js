@@ -26,12 +26,18 @@ export const contextMenuSlice = createSlice({
 			state[action.payload].enabled = false;
     },
 
+    dragMenu: (state, action) => {
+			state[action.payload.id].x = action.payload.x;
+			state[action.payload.id].y = action.payload.y;
+    },
+
   },
 });
 
 export const {
 	enable,
 	disable,
+	dragMenu,
 } = contextMenuSlice.actions;
 
 export const selectContextMenus = state => state.contextMenus;
