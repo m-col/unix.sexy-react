@@ -12,7 +12,6 @@ export default function WindowContent(props) {
   const titleBars = useSelector(selectTitleBars);
 
 	const style =	{
-		padding: `${windowContent.padding}px`,
 		width: "100%",
 		height: "100%",
 		boxSizing: "border-box",

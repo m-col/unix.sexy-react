@@ -46,10 +46,11 @@ export const {
 export const selectWindowContent = state => state.windowContent;
 
 export const selectWindowContentCSS = state => {
-	const { colour, textColour } = state.windowContent;
+	const { colour, textColour, padding } = state.windowContent;
 	return {
 		backgroundColor: colour,
 		color: textColour,
+		padding: `${padding}px`,
 	}
 }
 

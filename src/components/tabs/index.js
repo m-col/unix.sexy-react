@@ -35,7 +35,7 @@ function TabList(props) {
 			{props.children.map((child, i) => {
 				const { label } = child.props;
 
-				let className = 'tab-list-item tab-list-' + label;
+				let className = 'tab-list-item';
 				if (props.active === i) {
 					className += ' tab-list-active';
 				}
@@ -44,7 +44,7 @@ function TabList(props) {
 					<li
 						className={className}
 						onClick={() => dispatch(setTab(i))}
-						style={style}
+						style={{backgroundColor: style.backgroundColor, color: style.color}}
 						key={label}
 					>
 						{label === "About" ? <div className="square" style={{backgroundColor: style.color}}/> : label}
