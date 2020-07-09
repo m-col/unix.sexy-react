@@ -6,10 +6,11 @@ import Wallpaper from 'features/background';
 import Windows from 'features/windows';
 import Panel from 'features/panel';
 import StatusBar from 'features/status_bars';
+import ContextMenus from 'features/context_menus';
 import './index.css';
 
 
-export function Desktop() {
+export default function Desktop() {
   const background = useSelector(selectBackground);
 
 	const style = {};
@@ -21,12 +22,13 @@ export function Desktop() {
 
 	return (
 		<div id="Desktop" style={style}>
+
 			<Wallpaper />
 			<Panel />
 			<Windows />
 			<StatusBar />
+			<ContextMenus />
+
 		</div>
 	);
 }
-
-export default Desktop;

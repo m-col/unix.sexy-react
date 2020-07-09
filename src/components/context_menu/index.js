@@ -11,31 +11,18 @@ export default function ContextMenu(props) {
 	const windowContextStyle = useSelector(selectWindowContentCSS);
 	const borderStyle = useSelector(selectBorderStyle);
 	const shadowStyle = useSelector(selectShadowStyleCSS);
-  const [state, toggle] = useState({enabled: false, x: 0, y:0});
-
-	const enable = (e) => {
-		e.preventDefault();
-		toggle({enabled: true, x: e.clientX, y: e.clientY})
-	};
-
-	if (!state.enabled) {
-		return (
-			<div className="has-context-menu" onContextMenu={enable}>
-				{props.children}
-			</div>
-		);
-	};
 
 	const style = {
-		left: state.x,
+		left: props.x,
 		...windowContextStyle,
 		...borderStyle,
 		...shadowStyle,
 	};
-	if (props.position == "above") {
-		style.bottom = window.innerHeight - state.y;
+
+	if (props.position === "above") {
+		style.bottom = window.innerHeight - props.y;
 	} else {
-		style.top = state.y;
+		style.top = props.y;
 	};
 
 	return (
@@ -43,9 +30,9 @@ export default function ContextMenu(props) {
 			className="context-menu"
 			style={style}
 		>
-			<props.menu id={props.id} />
+		{props.children}
 			<button
-				onClick={() => toggle({enabled: false, x: 0, y: 0})}
+				//onClick={() => {enabled: false, x: 0, y: 0}}
 				style={{color: windowContextStyle.color}}
 			>
 			Hide

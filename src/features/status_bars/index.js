@@ -1,10 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { selectStatusBars } from './slice';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
-import ContextMenu from 'components/menu';
-import Menu from './menu';
+import { enable } from 'features/context_menus/slice';
 import './index.css';
 
 
@@ -12,6 +11,7 @@ const ids = ["top", "bottom"];
 
 
 export default function StatusBar() {
+  const dispatch = useDispatch();
   const statusBars = useSelector(selectStatusBars);
 	const shadows = useSelector(selectShadowStyleCSS);
 
@@ -37,9 +37,8 @@ export default function StatusBar() {
 				<div
 					className="status-bar"
 					style={style}
+					onContextMenu={e => dispatch(enable({id: `status_bar_${id}`, e: e}))}
 				>
-					<ContextMenu id={id} menu={Menu} position={id === "bottom" ? "above" : "below"}>
-					</ContextMenu>
 				</div>
 			);
 

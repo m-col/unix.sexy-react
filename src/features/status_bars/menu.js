@@ -12,19 +12,31 @@ import {
 	toggleShadows,
 	selectStatusBars,
 } from './slice';
+import { selectContextMenus } from 'features/context_menus/slice';
 import Colour from 'components/colour';
 import OptBox from 'components/optbox';
 import Switch from 'components/switch';
+import ContextMenu from 'components/context_menu';
 
 
 export default function Menu(props) {
-  const statusBars = useSelector(selectStatusBars);
   const dispatch = useDispatch();
+  const statusBars = useSelector(selectStatusBars);
 	const id = props.id;
 	const style = statusBars[id];
+  const state = useSelector(selectContextMenus)[`status_bar_${id}`];
+
+	if (!state.enabled) {
+		return null;
+	}
 
 	return (
-		<div>
+		<ContextMenu
+			position={id === "top" ? "below" : "above" }
+			x={state.x}
+			y={state.y}
+		>
+
 			<OptBox width={330}>
 				<div>
 					Colour
@@ -72,6 +84,7 @@ export default function Menu(props) {
 				</div>
 
 			</OptBox>
-		</div>
+
+		</ContextMenu>
 	);
 };

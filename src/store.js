@@ -13,6 +13,7 @@ import shadowReducer from 'features/shadows/slice';
 import borderReducer from 'features/borders/slice';
 import titleBarReducer from 'features/title_bars/slice';
 import statusBarReducer from 'features/status_bars/slice';
+import contextMenuReducer from 'features/context_menus/slice';
 import { RESET } from 'features/reset/slice';
 
 
@@ -27,6 +28,7 @@ const reducer = combineReducers({
 	shadows: shadowReducer,
 	borders: borderReducer,
 	statusBars: statusBarReducer,
+	contextMenus: contextMenuReducer,
 })
 
 

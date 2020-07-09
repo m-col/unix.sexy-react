@@ -1,11 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { selectTitleBars } from './slice';
+import { enable } from 'features/context_menus/slice';
 import './index.css';
 
 
 export default function TitleBar(props) {
+  const dispatch = useDispatch();
   const titleBars = useSelector(selectTitleBars);
 
 	if (!titleBars.enabled) {
@@ -49,6 +51,7 @@ export default function TitleBar(props) {
 		<div
 			className="title-bar"
 			style={style}
+			onContextMenu={e => dispatch(enable({id: 'title_bar', e: e}))}
 		>
 			term
 		</div>
