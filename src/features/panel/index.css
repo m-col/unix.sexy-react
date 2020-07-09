@@ -1,4 +1,4 @@
 #Panel {
-    z-index: 2;
+    z-index: 5;
     background-color: #ffffff;  /* transparency is used to make lighter shades in panel */
 }
