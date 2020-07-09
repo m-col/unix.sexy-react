@@ -8,9 +8,11 @@ import './index.css';
 export default function ContextMenus() {
 	return (
 		<>
+
 			<StatusBarMenu id="top" />
 			<StatusBarMenu id="bottom" />
 			<TitleBarMenu />
+
 		</>
 	);
 }

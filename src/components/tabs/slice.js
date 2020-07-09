@@ -16,5 +16,7 @@ const tabSlice = createSlice({
 });
 
 export const { setTab } = tabSlice.actions;
+
 export const selectTab = state => state.tab.index;
+
 export default tabSlice.reducer;

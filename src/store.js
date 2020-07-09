@@ -2,33 +2,32 @@ import { createStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 
-import tabReducer from 'components/tabs/slice';
-import panelReducer from 'features/panel/slice';
-
-import backgroundReducer from 'features/background/slice';
-import windowReducer from 'features/windows/slice';
-import windowContentReducer from 'features/window_content/slice';
 import alphaReducer from 'features/alpha/slice';
-import shadowReducer from 'features/shadows/slice';
+import backgroundReducer from 'features/background/slice';
 import borderReducer from 'features/borders/slice';
-import titleBarReducer from 'features/title_bars/slice';
-import statusBarReducer from 'features/status_bars/slice';
 import contextMenuReducer from 'features/context_menus/slice';
+import panelReducer from 'features/panel/slice';
+import shadowReducer from 'features/shadows/slice';
+import statusBarReducer from 'features/status_bars/slice';
+import tabReducer from 'components/tabs/slice';
+import titleBarReducer from 'features/title_bars/slice';
+import windowContentReducer from 'features/window_content/slice';
+import windowReducer from 'features/windows/slice';
 import { RESET } from 'features/reset/slice';
 
 
 const reducer = combineReducers({
-	tab: tabReducer,
-	panel: panelReducer,
-	background: backgroundReducer,
-	windows: windowReducer,
-	windowContent: windowContentReducer,
 	alpha: alphaReducer,
-	titleBars: titleBarReducer,
-	shadows: shadowReducer,
+	background: backgroundReducer,
 	borders: borderReducer,
-	statusBars: statusBarReducer,
 	contextMenus: contextMenuReducer,
+	panel: panelReducer,
+	shadows: shadowReducer,
+	statusBars: statusBarReducer,
+	tab: tabReducer,
+	titleBars: titleBarReducer,
+	windowContent: windowContentReducer,
+	windows: windowReducer,
 })
 
 

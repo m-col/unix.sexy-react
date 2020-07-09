@@ -18,18 +18,15 @@ export const windowContentSlice = createSlice({
 				state.colour = colour;
 			}
 		},
-
     toggleText: state => {
 			state.text = !state.text;
     },
-
 		setTextColour: (state, input) => {
 			let colour = input.payload
 			if (colour) {
 				state.textColour = colour;
 			}
 		},
-
     setPadding: (state, value) => {
 			state.padding = value.payload
     },

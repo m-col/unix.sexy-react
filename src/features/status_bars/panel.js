@@ -1,12 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import {
-	toggle,
-	selectStatusBars,
-} from './slice';
 import OptBox from 'components/optbox';
 import Switch from 'components/switch';
+
+import { toggle, selectStatusBars } from './slice';
 
 
 export function StatusBarCtl() {
@@ -14,6 +12,7 @@ export function StatusBarCtl() {
 
 	return (
 		<>
+
 			<OptBox className="StatusBarCtl" label="Status Bars" width={120}>
 
 				<div>

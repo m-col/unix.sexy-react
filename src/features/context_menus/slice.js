@@ -5,13 +5,12 @@ export const contextMenuSlice = createSlice({
   name: 'contextMenus',
 
 	initialState: {
-		status_bar_top: {enabled: false, x: 0, y:0},
-		status_bar_bottom: {enabled: false, x: 0, y:0},
-		title_bar: {enabled: false, x: 0, y:0},
+		status_bar_top: {enabled: false, x: 0, y: 0},
+		status_bar_bottom: {enabled: false, x: 0, y: 0},
+		title_bar: {enabled: false, x: 0, y: 0},
 	},
 
   reducers: {
-
     enable: (state, action) => {
 			const e = action.payload.e;
 			e.preventDefault();
@@ -21,16 +20,13 @@ export const contextMenuSlice = createSlice({
 				y: e.clientY,
 			};
     },
-
     disable: (state, action) => {
 			state[action.payload].enabled = false;
     },
-
     dragMenu: (state, action) => {
 			state[action.payload.id].x = action.payload.x;
 			state[action.payload.id].y = action.payload.y;
     },
-
   },
 });
 

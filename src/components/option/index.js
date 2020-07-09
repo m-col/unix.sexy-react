@@ -3,7 +3,8 @@ import React from 'react';
 import './index.css';
 
 
-var nameCounter = 0;
+var nameCounter = 0;  // gives inputs uniques name
+
 
 export default function Option(props) {
 	nameCounter += 1;

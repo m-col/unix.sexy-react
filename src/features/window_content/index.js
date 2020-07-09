@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectWindowContent, selectWindowContentCSS } from './slice';
 import { selectTitleBars } from 'features/title_bars/slice';
+import { selectWindowContent, selectWindowContentCSS } from './slice';
 import './index.css';
 
 

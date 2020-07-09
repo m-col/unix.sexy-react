@@ -19,15 +19,18 @@ export default function Colour(props) {
 
 	return (
 		<>
+
 			<input value={props.value}
 				onChange={e => dispatch(props.callback(fixColour(e.target.value)))}
 				className="colour"
 			/>
+
 			<ColorPicker
 				color={props.value}
 				onChange={c => dispatch(props.callback(fixColour(c.color)))}
 				>
 			</ColorPicker>
+
 		</>
 	);
 }

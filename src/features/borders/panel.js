@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Colour from 'components/colour';
+import OptBox from 'components/optbox';
+
 import {
 	setBorderRadius,
 	setBorderWidth,
@@ -8,8 +11,6 @@ import {
 	setBorderColorFocus,
 	selectBorderStyle,
 } from './slice';
-import Colour from 'components/colour';
-import OptBox from 'components/optbox';
 
 
 export function BorderCtl() {

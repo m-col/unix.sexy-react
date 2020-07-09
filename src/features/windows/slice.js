@@ -20,16 +20,13 @@ export const windowSlice = createSlice({
 				}
 			)
     },
-
     delWindow: state => {
 			state.pop()
     },
-
     dragWindow: (state, action) => {
 			state[action.payload.id].x = action.payload.x
 			state[action.payload.id].y = action.payload.y
     },
-
     resizeWindow: (state, action) => {
 			state[action.payload.id].width += action.payload.d.width
 			state[action.payload.id].height += action.payload.d.height

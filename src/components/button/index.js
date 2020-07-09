@@ -11,12 +11,14 @@ export default function Button(props) {
 
 	return (
 		<>
+
 			<button
 				onClick={() => dispatch(props.callback())}
 				style={{color: windowContent.textColour}}
 			>
 			{props.text}
 			</button>
+
 		</>
 	);
 }

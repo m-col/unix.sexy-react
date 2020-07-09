@@ -3,10 +3,10 @@ import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Tabs from 'components/tabs';
-import { dragPanel, selectPanel } from './slice';
-import { selectShadowStyleCSS } from 'features/shadows/slice';
-import './index.css';
 
+import { selectShadowStyleCSS } from 'features/shadows/slice';
+import { dragPanel, selectPanel } from './slice';
+import './index.css';
 
 // Panel contents
 import { About } from 'features/about/panel';
@@ -22,7 +22,7 @@ import { LauncherCtl } from 'features/launchers/panel';
 import { NotificationCtl } from 'features/notifications/panel';
 
 
-export function Panel() {
+export default function Panel() {
   const dispatch = useDispatch();
   const position = useSelector(selectPanel);
 
@@ -48,6 +48,7 @@ export function Panel() {
 				(e, d) => {dispatch(dragPanel({x: d.x, y: d.y}))}
 			}
 		>
+
 			<Tabs>
 
 				<div label="About">
@@ -77,8 +78,7 @@ export function Panel() {
 				</div>
 
 			</Tabs>
+
 		</Rnd>
 	);
 }
-
-export default Panel;

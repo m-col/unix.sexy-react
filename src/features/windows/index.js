@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
+import { Rnd } from 'react-rnd';
 
+import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
+import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
+import { selectShadowStyleCSS } from 'features/shadows/slice';
 import TitleBar from 'features/title_bars';
 import WindowContent from 'features/window_content';
-import './index.css';
-
 import { selectPositions, dragWindow, resizeWindow } from './slice';
-import { selectShadowStyleCSS } from 'features/shadows/slice';
-import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
-import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
+import './index.css';
 
 
 export default function Windows() {

@@ -17,9 +17,7 @@ export const panelSlice = createSlice({
   },
 });
 
-export const {
-	dragPanel,
-} = panelSlice.actions;
+export const { dragPanel } = panelSlice.actions;
 
 export const selectPanel = state => state.panel;
 

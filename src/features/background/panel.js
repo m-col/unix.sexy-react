@@ -1,6 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Button from 'components/button';
+import Colour from 'components/colour';
+import OptBox from 'components/optbox';
+
 import {
 	setBackground,
 	setWallpaper,
@@ -9,9 +13,6 @@ import {
 	setTintColour,
 	selectBackground,
 } from './slice';
-import Button from 'components/button';
-import Colour from 'components/colour';
-import OptBox from 'components/optbox';
 
 
 export function BackgroundCtl() {
@@ -20,6 +21,7 @@ export function BackgroundCtl() {
 
 	return (
 		<>
+
 			<OptBox className="BackgroundCtl" label="Background" width="260px">
 
 				<div>
@@ -60,7 +62,9 @@ export function BackgroundCtl() {
 					/>
 					<Colour value={background.tintColour} callback={setTintColour} />
 				</div>
+
 			</OptBox>
+
 		</>
 	);
 };

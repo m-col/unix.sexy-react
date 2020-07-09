@@ -13,8 +13,10 @@ export default function OptBox(props) {
 			className={`optbox ${props.className}`}
 			style={{width: props.width, color: windowContent.textColour}}
 		>
+
 			<h3>{props.label}</h3>
 			{props.children}
+
 		</div>
 	);
 }

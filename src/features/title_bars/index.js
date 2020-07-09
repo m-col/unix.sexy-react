@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectTitleBars } from './slice';
 import { enable } from 'features/context_menus/slice';
+import { selectTitleBars } from './slice';
 import './index.css';
 
 

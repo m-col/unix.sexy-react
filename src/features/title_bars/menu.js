@@ -1,6 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Colour from 'components/colour';
+import ContextMenu from 'components/context_menu';
+import OptBox from 'components/optbox';
+import Option from 'components/option';
+import Switch from 'components/switch';
+
+import { selectContextMenus } from 'features/context_menus/slice';
 import {
 	toggle,
   setPosition,
@@ -11,12 +18,6 @@ import {
 	setWidth,
   selectTitleBars,
 } from './slice';
-import { selectContextMenus } from 'features/context_menus/slice';
-import Colour from 'components/colour';
-import OptBox from 'components/optbox';
-import Option from 'components/option';
-import Switch from 'components/switch';
-import ContextMenu from 'components/context_menu';
 
 
 export default function Menu(props) {

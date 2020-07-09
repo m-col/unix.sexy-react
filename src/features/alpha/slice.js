@@ -19,10 +19,7 @@ export const alphaSlice = createSlice({
   },
 });
 
-export const {
-	setAlpha,
-	setAlphaFocus,
-} = alphaSlice.actions;
+export const { setAlpha, setAlphaFocus } = alphaSlice.actions;
 
 export const selectAlpha = state => state.alpha;
 

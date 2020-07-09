@@ -3,9 +3,9 @@ import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { disable, dragMenu } from 'features/context_menus/slice';
-import { selectWindowContentCSS } from 'features/window_content/slice';
-import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectBorderStyle } from 'features/borders/slice';
+import { selectShadowStyleCSS } from 'features/shadows/slice';
+import { selectWindowContentCSS } from 'features/window_content/slice';
 import './index.css';
 
 

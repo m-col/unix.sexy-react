@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 
 import { selectBackground } from 'features/background/slice';
 import Wallpaper from 'features/background';
-import Windows from 'features/windows';
+import ContextMenus from 'features/context_menus';
 import Panel from 'features/panel';
 import StatusBar from 'features/status_bars';
-import ContextMenus from 'features/context_menus';
+import Windows from 'features/windows';
 import './index.css';
 
 

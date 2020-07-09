@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Colour from 'components/colour';
+import OptBox from 'components/optbox';
+import Switch from 'components/switch';
 import {
 	toggleShadows,
 	selectShadowStyle,
@@ -9,9 +12,6 @@ import {
 	setBlur,
 	setColour,
 } from './slice';
-import Colour from 'components/colour';
-import OptBox from 'components/optbox';
-import Switch from 'components/switch';
 
 
 export function ShadowCtl() {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectTab, setTab } from './slice';
 import { selectWindowContentCSS } from 'features/window_content/slice';
+import { selectTab, setTab } from './slice';
 import './index.css';
 
 
@@ -21,6 +21,7 @@ export default function Tabs(props) {
 			className: 'tab-content',
 			style: style
 		})}
+
 		</div>
 	);
 }
@@ -32,6 +33,7 @@ function TabList(props) {
 
 	return (
 		<ol className="tab-list">
+
 			{props.children.map((child, i) => {
 				const { label } = child.props;
 
@@ -51,6 +53,7 @@ function TabList(props) {
 					</li>
 				);
 			})}
+
 		</ol>
 	)
 }
