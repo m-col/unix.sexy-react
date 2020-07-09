@@ -1,6 +1,7 @@
 .optbox {
     border: 2px solid rgba(255, 255, 255, 0.1);
     width: 300px;
+    box-sizing: border-box;
     height: 100%;
     margin: 2px;
     flex: 0 0 auto;
