@@ -38,7 +38,7 @@ export default function Menu(props) {
 			y={state.y}
 		>
 
-			<OptBox width={330}>
+			<OptBox label={`${id} Status Bar`} width={350}>
 				<div>
 					Colour
 					<Colour
