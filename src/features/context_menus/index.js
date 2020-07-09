@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import StatusBarMenu from 'features/status_bars/menu';
 import TitleBarMenu from 'features/title_bars/menu';

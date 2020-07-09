@@ -32,6 +32,7 @@ export default function Menu(props) {
 
 	return (
 		<ContextMenu
+			id={`status_bar_${id}`}
 			position={id === "top" ? "below" : "above" }
 			x={state.x}
 			y={state.y}

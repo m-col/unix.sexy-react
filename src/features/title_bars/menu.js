@@ -28,6 +28,7 @@ export default function Menu(props) {
 
 	return (
 		<ContextMenu
+			id={"title_bar"}
 			position={"below"}
 			x={state.x}
 			y={state.y}
