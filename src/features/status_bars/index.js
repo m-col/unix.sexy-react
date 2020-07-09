@@ -34,15 +34,13 @@ export default function StatusBar() {
 			style[id] = `${statusBars[id].yOffset}px`;
 
 			return (
-				<>
-					<div
-						className="status-bar"
-						style={style}
-					>
-						<ContextMenu id={id} menu={Menu} position={id === "bottom" ? "above" : "below"}>
-						</ContextMenu>
-					</div>
-				</>
+				<div
+					className="status-bar"
+					style={style}
+				>
+					<ContextMenu id={id} menu={Menu} position={id === "bottom" ? "above" : "below"}>
+					</ContextMenu>
+				</div>
 			);
 
 		})
