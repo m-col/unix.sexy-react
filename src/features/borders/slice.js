@@ -14,7 +14,6 @@ export const borderSlice = createSlice({
   reducers: {
     setBorderRadius: (state, value) => {
 			state.borderRadius = Number(value.payload)
-			console.log(state.borderRadius)
     },
     setBorderWidth: (state, value) => {
 			state.borderWidth = Number(value.payload)
