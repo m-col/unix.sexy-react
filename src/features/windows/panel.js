@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Button from 'components/button';
 import OptBox from 'components/optbox';
@@ -11,7 +11,6 @@ import { addWindow, delWindow } from './slice';
 
 export function WindowCtl() {
   const titleBars = useSelector(selectTitleBars);
-  const dispatch = useDispatch();
 
 	return (
 		<OptBox className="WindowCtl" label="Settings" width="220px">
