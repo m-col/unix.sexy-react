@@ -2,9 +2,11 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Button from 'components/button';
+import ContextMenu from 'components/context_menu';
 import Colour from 'components/colour';
 import OptBox from 'components/optbox';
 
+import { selectContextMenus } from 'features/context_menus/slice';
 import {
 	setBackground,
 	setWallpaper,
@@ -15,12 +17,21 @@ import {
 } from './slice';
 
 
-export function BackgroundCtl() {
-  const background = useSelector(selectBackground);
+export default function Menu(props) {
   const dispatch = useDispatch();
+  const background = useSelector(selectBackground);
+  const state = useSelector(selectContextMenus)["background"];
+
+	if (!state.enabled) {
+		return null;
+	}
 
 	return (
-		<>
+		<ContextMenu
+			id="background"
+			x={state.x}
+			y={state.y}
+		>
 
 			<OptBox className="BackgroundCtl" label="Background" width="260px">
 
@@ -65,6 +76,6 @@ export function BackgroundCtl() {
 
 			</OptBox>
 
-		</>
+		</ContextMenu>
 	);
 };

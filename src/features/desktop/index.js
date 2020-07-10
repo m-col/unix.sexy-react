@@ -1,6 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { enable } from 'features/context_menus/slice';
 import { selectBackground } from 'features/background/slice';
 import Wallpaper from 'features/background';
 import ContextMenus from 'features/context_menus';
@@ -11,6 +12,7 @@ import './index.css';
 
 
 export default function Desktop() {
+  const dispatch = useDispatch();
   const background = useSelector(selectBackground);
 
 	const style = {};
@@ -21,7 +23,11 @@ export default function Desktop() {
 	};
 
 	return (
-		<div id="Desktop" style={style}>
+		<div
+			id="Desktop"
+			style={style}
+			onContextMenu={e => dispatch(enable({id: "background", e: e}))}
+		>
 
 			<Wallpaper />
 			<Panel />
