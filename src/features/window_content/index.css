@@ -1,8 +1,3 @@
-.window-content {
-    overflow: hidden;
-    display: inline-block;
-}
-
 .window-content textarea {
     font-size: 80%;
     width: 100%;

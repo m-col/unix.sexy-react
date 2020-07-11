@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Rnd } from 'react-rnd';
 
-import { selectAlphaStyle, selectAlphaFocusStyle } from 'features/alpha/slice';
-import { selectBorderStyle, selectBorderFocusStyle } from 'features/borders/slice';
-import { selectShadowStyleCSS } from 'features/shadows/slice';
-import TitleBar from 'features/title_bars';
+import Window from 'components/window';
+
 import WindowContent from 'features/window_content';
 import { selectPositions, dragWindow, resizeWindow } from './slice';
 import './index.css';
@@ -14,40 +11,21 @@ import './index.css';
 export default function Windows() {
   const dispatch = useDispatch();
   const positions = useSelector(selectPositions);
-  const [focussed, setFocus] = useState(0);
-
-	const style = {
-		...useSelector(selectShadowStyleCSS),
-		...useSelector(selectBorderStyle),
-		...useSelector(selectAlphaStyle),
-	};
-
-	const focusStyle = {
-		...style,
-		...useSelector(selectBorderFocusStyle),
-		...useSelector(selectAlphaFocusStyle),
-		zIndex: 2,
-	};
 
 	return (
 		positions.map((position, id) => {
 			return (
-				<Rnd
-					bounds="parent"
-					minWidth="20"
-					minHeight="20"
+				<Window
+					zIndex={2}
+					position={{
+						x: position.x, y: position.y
+					}}
 					enableResizing={{
 						right:true, bottom:true, bottomRight:true
 					}}
 					size={{
 						width: position.width,  height: position.height
 					}}
-					position={{
-						x: position.x, y: position.y
-					}}
-				  onDragStart={
-						() => setFocus(id)
-					}
 				  onDragStop={
 						(e, d) => {dispatch(dragWindow({id: id, x: d.x, y: d.y}))}
 					}
@@ -55,18 +33,11 @@ export default function Windows() {
 						(e, dir, ref, d, pos) => {dispatch(resizeWindow({id: id, d:d }))}
 					}
 					id={id}
-					className="Window"
-					style={(id === focussed) ? focusStyle : style}
-					onClick={() => setFocus(id)}
 				>
-
-					<TitleBar
-						focussed={(id === focussed)}
-					/>
 
 					<WindowContent id={id}/>
 
-				</Rnd>
+				</Window>
 			)
 		})
 	)

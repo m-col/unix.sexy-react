@@ -1,48 +1,39 @@
 import React from 'react';
-import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Window from 'components/window';
+
 import { disable, dragMenu } from 'features/context_menus/slice';
-import { selectBorderStyle } from 'features/borders/slice';
-import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectWindowContentCSS } from 'features/window_content/slice';
-import './index.css';
 
 
 export default function ContextMenu(props) {
 	const dispatch = useDispatch();
-	const windowContextStyle = useSelector(selectWindowContentCSS);
-
-	const style = {
-		...windowContextStyle,
-		...useSelector(selectBorderStyle),
-		...useSelector(selectShadowStyleCSS),
-	};
+	const windowContentStyle = useSelector(selectWindowContentCSS);
 
 	return (
-		<Rnd
-			bounds="parent"
-			className="context-menu"
-			style={style}
+		<Window
 			enableResizing={false}
 			position={{
 				x: props.x,
 				y: props.y,
 			}}
 			onDragStop={
-				(e, d) => {dispatch(dragMenu({id: props.id, x: d.x, y: d.y}))}
+				(e, d) => dispatch(dragMenu({id: props.id, x: d.x, y: d.y}))
 			}
+			zIndex={4}
+			id={props.id}
 		>
 
 			{props.children}
 
 			<button
 				onClick={() => dispatch(disable(props.id))}
-				style={{color: windowContextStyle.color}}
+				style={{color: windowContentStyle.color}}
 			>
-				Hide
+				Close
 			</button>
 
-		</Rnd>
+		</Window>
 	);
 }

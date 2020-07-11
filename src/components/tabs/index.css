@@ -1,5 +1,10 @@
 .tabs {
     height: 214px;
+    background-color: #ffffff;  /* transparency is used to make lighter shades in panel */
+    width: "522px";
+    height: "204px";
+    max-width: "522px";
+    max-height: "204px";
 }
 
 .tab-list {

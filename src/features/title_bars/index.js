@@ -15,7 +15,9 @@ export default function TitleBar(props) {
 	};
 
 	const style = {
-		lineHeight: `${titleBars.width}px`
+		lineHeight: `${titleBars.width}px`,
+		minHeight: `${titleBars.width}px`,
+		minWidth: `${titleBars.width}px`,
 	};
 
 	if (props.focussed) {
@@ -26,25 +28,10 @@ export default function TitleBar(props) {
 		style.color = titleBars.textColour;
 	};
 
-	if (titleBars.position === "N" || titleBars.position === "S") {
-		style.height = `${titleBars.width}px`;
-		style.width = "100%";
-		if (titleBars.position === "S") {
-			style.position = "absolute";
-			style.bottom = 0;
-		};
-
-	} else { /* East and West */
-		style.height = "100%";
-		style.width = `${titleBars.width}px`;
-		if (titleBars.position === "E") {
-			style.position = "absolute";
-			style.right = 0;
-			style.writingMode = "sideways-rl";
-		} else {
-			style.writingMode = "sideways-lr";
-			style.display = "inline-block";
-		};
+	if (titleBars.position === "E") {
+		style.writingMode = "sideways-rl";
+	} else if (titleBars.position === "W") {
+		style.writingMode = "sideways-lr";
 	};
 
 	return (

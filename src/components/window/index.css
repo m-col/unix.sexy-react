@@ -1,0 +1,16 @@
+.react-draggable {
+    display: flex !important;
+}
+
+.Window {
+    border-style: solid;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+}
+
+.window-content {
+    overflow: hidden;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+}

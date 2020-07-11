@@ -6,6 +6,7 @@ import alphaReducer from 'features/alpha/slice';
 import backgroundReducer from 'features/background/slice';
 import borderReducer from 'features/borders/slice';
 import contextMenuReducer from 'features/context_menus/slice';
+import focusReducer from 'components/window/slice';
 import panelReducer from 'features/panel/slice';
 import shadowReducer from 'features/shadows/slice';
 import statusBarReducer from 'features/status_bars/slice';
@@ -21,6 +22,7 @@ const reducer = combineReducers({
 	background: backgroundReducer,
 	borders: borderReducer,
 	contextMenus: contextMenuReducer,
+	focus: focusReducer,
 	panel: panelReducer,
 	shadows: shadowReducer,
 	statusBars: statusBarReducer,

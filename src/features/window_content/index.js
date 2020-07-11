@@ -1,54 +1,25 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectTitleBars } from 'features/title_bars/slice';
-import { selectWindowContent, selectWindowContentCSS } from './slice';
+import { selectWindowContentCSS } from './slice';
 import './index.css';
 
 
+const placeholder = "[charlie@chocfactory ~]$ sb () {\n"
+									+ "> sed 's/.*/\\L&/g; s/\\(.\\{1\\}\\)\\(.\\)/\\1\\U\\2/g' <<< \"$@\"\n"
+									+ "> }\n"
+									+ "[charlie@chocfactory ~]$ sb btw i use arch\n"
+									+ "bTw i uSe aRcH";
+
+
 export default function WindowContent(props) {
-  const windowContent = useSelector(selectWindowContent);
-  const windowContentCSS = useSelector(selectWindowContentCSS);
-  const titleBars = useSelector(selectTitleBars);
-
-	const style =	{
-		width: "100%",
-		height: "100%",
-		boxSizing: "border-box",
-		...windowContentCSS,
-	};
-
-	if (titleBars.enabled) {
-		if (titleBars.position === "N" || titleBars.position === "S") {
-			style.height = `calc(100% - ${titleBars.width}px)`
-		} else {
-			style.width = `calc(100% - ${titleBars.width}px)`;
-			if (titleBars.position === "W") {
-				style.left = titleBars.width;
-				style.top = 0;
-			};
-		};
-	};
-
-	var text = "";
-	if (props.id === 0) {
-		text = "[charlie@chocfactory ~]$ sb () {\n"
-				 + "> sed 's/.*/\\L&/g; s/\\(.\\{1\\}\\)\\(.\\)/\\1\\U\\2/g' <<< \"$@\"\n"
-				 + "> }\n"
-				 + "[charlie@chocfactory ~]$ sb btw i use arch\n"
-				 + "bTw i uSe aRcH";
-	};
+  const windowContentStyle = useSelector(selectWindowContentCSS);
 
 	return (
-		<div
-			className="window-content"
-			style={style}
-		>
-		{windowContent.text &&
-			<textarea style={windowContentCSS}>
-				{text}
-			</textarea>
-		}
-		</div>
+		<textarea style={windowContentStyle}>
+
+			{props.id === 0 ? placeholder : ""}
+
+		</textarea>
 	);
 };

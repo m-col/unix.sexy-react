@@ -1,8 +1,8 @@
 import React from 'react';
-import { Rnd } from 'react-rnd';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Tabs from 'components/tabs';
+import Window from 'components/window';
 
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { dragPanel, selectPanel } from './slice';
@@ -25,27 +25,18 @@ export default function Panel() {
   const dispatch = useDispatch();
   const position = useSelector(selectPanel);
 
-	const style = {
-		...useSelector(selectShadowStyleCSS),
-	};
+	const style = useSelector(selectShadowStyleCSS);
 
 	return (
-		<Rnd
-			bounds="parent"
+		<Window
 			id="Panel"
-			cancel=".tab-content"
 			enableResizing={false}
 			style={style}
-			position={{
-				x: position.x,
-				y: position.y
-			}}
-			size={{
-				width: "522px",  height: "204px"
-			}}
+			position={position}
 			onDragStop={
 				(e, d) => {dispatch(dragPanel({x: d.x, y: d.y}))}
 			}
+			zIndex={5}
 		>
 
 			<Tabs>
@@ -77,6 +68,6 @@ export default function Panel() {
 
 			</Tabs>
 
-		</Rnd>
+		</Window>
 	);
 }
