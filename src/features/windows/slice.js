@@ -34,7 +34,12 @@ export const windowSlice = createSlice({
   },
 });
 
-export const { addWindow, delWindow, dragWindow, resizeWindow } = windowSlice.actions;
+export const {
+	addWindow,
+	delWindow,
+	dragWindow,
+	resizeWindow
+} = windowSlice.actions;
 
 export const selectPositions = state => state.windows;
 

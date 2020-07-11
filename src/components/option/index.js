@@ -13,7 +13,7 @@ export default function Option(props) {
 		<div className="switch">
 
 			{
-				props.options.map((option, id) => {
+				props.options.map(option => {
 
 				var checked = "";
 				if (option.key === props.value) {
