@@ -8,9 +8,14 @@ import './index.css';
 export default function OptBox(props) {
 	const windowContent  = useSelector(selectWindowContent);
 
+	var className = 'optbox';
+	if (props.className) {
+		className += ` ${props.className}`
+	}
+
 	return (
 		<div
-			className={`optbox ${props.className}`}
+			className={className}
 			style={{width: props.width, color: windowContent.textColour}}
 		>
 
