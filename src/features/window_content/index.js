@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectWindowContentCSS } from './slice';
+import { selectWindowContent } from './slice';
 import './index.css';
 
 
@@ -13,10 +13,15 @@ const placeholder = "[charlie@chocfactory ~]$ sb () {\n"
 
 
 export default function WindowContent(props) {
-  const windowContentStyle = useSelector(selectWindowContentCSS);
+  const windowContent = useSelector(selectWindowContent);
 
 	return (
-		<textarea style={windowContentStyle}>
+		<textarea
+			style={{
+				backgroundColor: windowContent.colour,
+				color: windowContent.textColour,
+			}}
+		>
 
 			{props.id === 0 ? placeholder : ""}
 
