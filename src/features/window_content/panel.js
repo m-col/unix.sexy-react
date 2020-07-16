@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Colour from 'components/colour';
 import OptBox from 'components/optbox';
-import Switch from 'components/switch';
 
 import {
 	setColour,
-	toggleText,
 	setTextColour,
 	setPadding, selectWindowContent
 } from './slice';
@@ -23,11 +21,6 @@ export function WindowContentCtl() {
 			<div>
 				Colour
 				<Colour value={windowContent.colour} callback={setColour} />
-			</div>
-
-			<div>
-				Text
-				<Switch value={windowContent.text} callback={toggleText} />
 			</div>
 
 			<div>

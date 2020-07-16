@@ -6,21 +6,16 @@ export const windowContentSlice = createSlice({
 
 	initialState: {
 		colour: "#030405",
-		text: true,
 		textColour: "#c5c5c8",
 		padding: 5,
 	},
 
   reducers: {
 		setColour: (state, input) => {
-			let colour = input.payload
-			if (colour) {
-				state.colour = colour;
+			if (input.payload) {
+				state.colour = input.payload;
 			}
 		},
-    toggleText: state => {
-			state.text = !state.text;
-    },
 		setTextColour: (state, input) => {
 			let colour = input.payload
 			if (colour) {
@@ -35,7 +30,6 @@ export const windowContentSlice = createSlice({
 
 export const {
 	setColour,
-	toggleText,
 	setTextColour,
 	setPadding
 } = windowContentSlice.actions;
