@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import alphaReducer from 'features/alpha/slice';
 import backgroundReducer from 'features/background/slice';
 import borderReducer from 'features/borders/slice';
+import colorReducer from 'features/colors/slice';
 import contextMenuReducer from 'features/context_menus/slice';
 import focusReducer from 'components/window/slice';
 import panelReducer from 'features/panel/slice';
@@ -21,6 +22,7 @@ const reducer = combineReducers({
 	alpha: alphaReducer,
 	background: backgroundReducer,
 	borders: borderReducer,
+	colors: colorReducer,
 	contextMenus: contextMenuReducer,
 	focus: focusReducer,
 	panel: panelReducer,

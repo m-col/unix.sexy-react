@@ -6,9 +6,14 @@ import { store, persistor } from 'store';
 import { PersistGate } from 'redux-persist/integration/react';
 import * as serviceWorker from 'serviceWorker';
 
+import Prism from "prismjs";
+import 'prismjs/plugins/autoloader/prism-autoloader.min.js';
+
 import Desktop from 'features/desktop';
 import 'index.css';
 
+
+Prism.plugins.autoloader.languages_path = '/prism_grammars/';
 
 ReactDOM.render(
   <React.StrictMode>
