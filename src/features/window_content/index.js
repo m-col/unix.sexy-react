@@ -5,6 +5,7 @@ import { selectWindowContent } from './slice';
 import './index.css';
 
 
+/* eslint no-template-curly-in-string: 0 */
 const sample
 	= "#!/usr/bin/env bash\n"
 	+ "\n"
