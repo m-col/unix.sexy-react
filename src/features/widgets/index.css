@@ -1,0 +1,8 @@
+.widget-block {
+    display: flex;
+    align-items: stretch;
+}
+
+.widget {
+    vertical-align: middle;
+}

@@ -1,12 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Button from 'components/button';
 import Colour from 'components/colour';
 import ContextMenu from 'components/context_menu';
 import OptBox from 'components/optbox';
 import Switch from 'components/switch';
 
 import { selectContextMenus } from 'features/context_menus/slice';
+import { addWidget, delWidget } from 'features/widgets/slice';
 import {
   setWidth,
   setHeight,
@@ -39,7 +41,7 @@ export default function Menu(props) {
 			y={state.y}
 		>
 
-			<OptBox label={`${id} Status Bar`} width={350}>
+			<OptBox label={`${id} Status Bar`} className="status-bar-menu" width={350}>
 				<div>
 					Colour
 					<Colour
@@ -83,6 +85,18 @@ export default function Menu(props) {
 
 					Shadows
 					<Switch value={style.shadows} callback={() => toggleShadows(id)} />
+				</div>
+
+				<div>
+					Widgets
+					<Button text={"+"} callback={() => addWidget({ bar: id, pos: "left"})} style={{marginLeft: "8px"}}/>
+					<Button text={"-"} callback={() => delWidget({ bar: id, pos: "left"})} />
+					―
+					<Button text={"+"} callback={() => addWidget({ bar: id, pos: "centre"})} />
+					<Button text={"-"} callback={() => delWidget({ bar: id, pos: "centre"})} />
+					―
+					<Button text={"+"} callback={() => addWidget({ bar: id, pos: "right"})} />
+					<Button text={"-"} callback={() => delWidget({ bar: id, pos: "right"})} />
 				</div>
 
 			</OptBox>

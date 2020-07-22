@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { enable } from 'features/context_menus/slice';
+import Widgets from 'features/widgets';
 import { selectShadowStyleCSS } from 'features/shadows/slice';
 import { selectStatusBars } from './slice';
 import './index.css';
@@ -16,7 +17,7 @@ export default function StatusBar() {
 	const shadows = useSelector(selectShadowStyleCSS);
 
 	return (
-		ids.map((id, index) => {
+		ids.map(id => {
 
 			if (!statusBars[id].enabled) {
 				return null;
@@ -39,6 +40,7 @@ export default function StatusBar() {
 					style={style}
 					onContextMenu={e => dispatch(enable({id: `status_bar_${id}`, e: e}))}
 				>
+					<Widgets id={id} />
 				</div>
 			);
 

@@ -13,6 +13,7 @@ import shadowReducer from 'features/shadows/slice';
 import statusBarReducer from 'features/status_bars/slice';
 import tabReducer from 'components/tabs/slice';
 import titleBarReducer from 'features/title_bars/slice';
+import widgetReducer from 'features/widgets/slice';
 import windowContentReducer from 'features/window_content/slice';
 import windowReducer from 'features/windows/slice';
 import { RESET } from 'features/reset/slice';
@@ -30,6 +31,7 @@ const reducer = combineReducers({
 	statusBars: statusBarReducer,
 	tab: tabReducer,
 	titleBars: titleBarReducer,
+	widgets: widgetReducer,
 	windowContent: windowContentReducer,
 	windows: windowReducer,
 })
