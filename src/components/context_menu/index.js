@@ -25,14 +25,18 @@ export default function ContextMenu(props) {
 			id={props.id}
 		>
 
-			{props.children}
+			<div>
 
-			<button
-				onClick={() => dispatch(disable(props.id))}
-				style={{color: windowContentStyle.color}}
-			>
-				Close
-			</button>
+				{props.children}
+
+				<button
+					onClick={() => dispatch(disable(props.id))}
+					style={{color: windowContentStyle.color}}
+				>
+					Close
+				</button>
+
+			</div>
 
 		</Window>
 	);
