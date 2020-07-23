@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { enable } from 'features/context_menus/slice';
+
 
 const focusSlice = createSlice({
 	name: 'focus',
@@ -13,6 +15,11 @@ const focusSlice = createSlice({
 			state.id = action.payload;
 		},
 	},
+	extraReducers: {
+    [enable]: (state, action) => {
+			state.id = action.payload.id;
+    }
+  }
 });
 
 export const { setFocus } = focusSlice.actions;
