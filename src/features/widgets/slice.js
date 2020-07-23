@@ -33,11 +33,19 @@ export const widgetSlice = createSlice({
   reducers: {
     addWidget: (state, action) => {
 			const { bar, pos } = action.payload;
-			state[bar][pos].push(_widget)
+			if (pos === "right") {
+				state[bar][pos].unshift(_widget)
+			} else {
+				state[bar][pos].push(_widget)
+			};
     },
     delWidget: (state, action) => {
 			const { bar, pos } = action.payload;
-			state[bar][pos].pop()
+			if (pos === "right") {
+				state[bar][pos].shift()
+			} else {
+				state[bar][pos].pop()
+			};
     },
     setColor: (state, action) => {
 			const { bar, pos, id, color } = action.payload;
