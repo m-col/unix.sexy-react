@@ -9,18 +9,20 @@ export const contextMenuSlice = createSlice({
 		status_bar_bottom: {enabled: false, x: 0, y: 0},
 		title_bar: {enabled: false, x: 0, y: 0},
 		background: {enabled: false, x: 0, y: 0},
+		widget: {enabled: false, x: 0, y: 0},
 	},
 
   reducers: {
     enable: (state, action) => {
-			const e = action.payload.e;
+			const { id, e, details } = action.payload;
 			e.preventDefault();
-			state[action.payload.id] = {
+			state[id] = {
 				enabled: true,
 				x: e.clientX,
 				y: e.clientY,
 			};
 			e.stopPropagation();
+			if (details) state[id].details = details;
     },
     disable: (state, action) => {
 			state[action.payload].enabled = false;

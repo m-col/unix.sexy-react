@@ -10,17 +10,17 @@ export const widgetSlice = createSlice({
 	initialState: {
 		top: {
 			left: [
-				{ padding: 10, backgroundColor: null, color: null, content: "一" },
-				{ padding: 10, backgroundColor: null, color: null, content: "二" },
-				{ padding: 10, backgroundColor: null, color: null, content: "三" },
-				{ padding: 10, backgroundColor: null, color: null, content: "四" },
+				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "一" },
+				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "二" },
+				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "三" },
+				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "四" },
 			],
 			centre: [
-				{ padding: 10, backgroundColor: null, color: null, content: "Pretend - Longer Repose" },
+				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "Pretend - Longer Repose" },
 			],
 			right: [
-				{ padding: 10, backgroundColor: null, color: null, content: "22/03/2044" },
-				{ padding: 10, backgroundColor: null, color: null, content: "23:42" },
+				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "22/03/2044" },
+				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "23:42" },
 			],
 		},
 		bottom: {
@@ -56,12 +56,12 @@ export const widgetSlice = createSlice({
 			state[bar][pos][id].backgroundColor = color;
     },
     setContent: (state, action) => {
-			const { bar, pos, id, content } = action.payload;
-			state[bar][pos][id].content = content;
+			const { bar, pos, id, value } = action.payload;
+			state[bar][pos][id].content = value;
     },
     setPadding: (state, action) => {
-			const { bar, pos, id, padding } = action.payload;
-			state[bar][pos][id].padding = padding;
+			const { bar, pos, id, value } = action.payload;
+			state[bar][pos][id].padding = value;
     },
   },
 });
