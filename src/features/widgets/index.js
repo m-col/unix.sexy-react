@@ -23,7 +23,7 @@ export default function Widgets(props) {
 									padding: `0 ${widget.padding}px`,
 								}}
 							>
-								{widget.text}
+								{widget.content}
 							</div>
 						)
 					})}

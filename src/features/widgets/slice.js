@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 
-const _widget = { padding: 10, backgroundColor: null, color: null, text: "一" };
+const _widget = { padding: 10, backgroundColor: null, color: null, content: "一" };
 
 
 export const widgetSlice = createSlice({
@@ -10,17 +10,17 @@ export const widgetSlice = createSlice({
 	initialState: {
 		top: {
 			left: [
-				{ padding: 10, backgroundColor: null, color: null, text: "一" },
-				{ padding: 10, backgroundColor: null, color: null, text: "二" },
-				{ padding: 10, backgroundColor: null, color: null, text: "三" },
-				{ padding: 10, backgroundColor: null, color: null, text: "四" },
+				{ padding: 10, backgroundColor: null, color: null, content: "一" },
+				{ padding: 10, backgroundColor: null, color: null, content: "二" },
+				{ padding: 10, backgroundColor: null, color: null, content: "三" },
+				{ padding: 10, backgroundColor: null, color: null, content: "四" },
 			],
 			centre: [
-				{ padding: 10, backgroundColor: null, color: null, text: "Pretend - Longer Repose" },
+				{ padding: 10, backgroundColor: null, color: null, content: "Pretend - Longer Repose" },
 			],
 			right: [
-				{ padding: 10, backgroundColor: null, color: null, text: "22/03/2044" },
-				{ padding: 10, backgroundColor: null, color: null, text: "23:42" },
+				{ padding: 10, backgroundColor: null, color: null, content: "22/03/2044" },
+				{ padding: 10, backgroundColor: null, color: null, content: "23:42" },
 			],
 		},
 		bottom: {
@@ -55,6 +55,14 @@ export const widgetSlice = createSlice({
 			const { bar, pos, id, color } = action.payload;
 			state[bar][pos][id].backgroundColor = color;
     },
+    setContent: (state, action) => {
+			const { bar, pos, id, content } = action.payload;
+			state[bar][pos][id].content = content;
+    },
+    setPadding: (state, action) => {
+			const { bar, pos, id, padding } = action.payload;
+			state[bar][pos][id].padding = padding;
+    },
   },
 });
 
@@ -63,6 +71,8 @@ export const {
 	delWidget,
 	setColor,
 	setBackgroundColor,
+	setContent,
+	setPadding,
 } = widgetSlice.actions;
 
 export const selectWidgets = state => state.widgets;
