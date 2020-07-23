@@ -7,10 +7,12 @@ import './index.css';
 
 
 function fixColour(colour) {
-		if (colour[0] !== '#') {
-			colour = '#' + colour
-		}
-		return colour
+	if (colour.length === 0) {
+		colour = "inherit"
+	} else if (colour[0] !== '#') {
+		colour = '#' + colour
+	}
+	return colour
 }
 
 
