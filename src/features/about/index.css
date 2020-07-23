@@ -8,4 +8,5 @@
 
 .AboutCtl h3 {
     font-size: 120%;
+    text-transform: none;
 }
