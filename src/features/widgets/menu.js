@@ -9,7 +9,6 @@ import { selectContextMenus } from 'features/context_menus/slice';
 import {
 	setColor,
 	setBackgroundColor,
-	setContent,
 	setPadding,
 	selectWidgets ,
 } from './slice';
@@ -49,13 +48,6 @@ export default function Menu(props) {
 					<Colour
 						value={style.backgroundColor}
 						callback={color => setBackgroundColor({...details, color: color})} 
-					/>
-				</div>
-
-				<div>
-					Content
-					<input value={style.content} type="string"
-						onChange={e => dispatch(setContent({...details, value: e.target.value}))}
 					/>
 				</div>
 

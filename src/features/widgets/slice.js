@@ -57,7 +57,11 @@ export const widgetSlice = createSlice({
     },
     setContent: (state, action) => {
 			const { bar, pos, id, value } = action.payload;
-			state[bar][pos][id].content = value;
+			if (value.length === 0) {
+				state[bar][pos].splice(id, 1);
+			} else {
+				state[bar][pos][id].content = value.replace(/[\n\r]/g, "");
+			}
     },
     setPadding: (state, action) => {
 			const { bar, pos, id, value } = action.payload;

@@ -2,7 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { enable } from 'features/context_menus/slice';
-import { selectWidgets } from './slice';
+import {
+	setContent,
+	selectWidgets ,
+} from './slice';
 import './index.css';
 
 
@@ -25,12 +28,18 @@ export default function Widgets(props) {
 									)
 								}
 								style={{
-									backgroundColor: widget.backgroundColor,
 									color: widget.color,
+									backgroundColor: widget.backgroundColor,
 									padding: `0 ${widget.padding}px`,
 								}}
 							>
-								{widget.content}
+								<textarea
+									rows={1}
+									cols={widget.content.length + 1}
+									onChange={e => dispatch(setContent({bar: props.id, pos: pos, id: id, value: e.target.value}))}
+									value={widget.content}
+								>
+								</textarea>
 							</div>
 						)
 					})}
