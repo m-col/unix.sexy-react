@@ -9,7 +9,7 @@ export const shadowSlice = createSlice({
 		hOffset: 4,
 		vOffset: 4,
 		blur: 4,
-		colour: '#000000',
+		color: '#000000',
 	},
 
   reducers: {
@@ -25,8 +25,8 @@ export const shadowSlice = createSlice({
     setBlur: (state, value) => {
 			state.blur = value.payload
     },
-    setColour: (state, value) => {
-			state.colour = value.payload
+    setColor: (state, value) => {
+			state.color = value.payload
     },
   },
 });
@@ -36,15 +36,15 @@ export const {
 	setHOffset,
 	setVOffset,
 	setBlur,
-	setColour
+	setColor
 } = shadowSlice.actions;
 
 export const selectShadowStyle = state => state.shadows;
 
 export const selectShadowStyleCSS = state => {
-	const { enabled, hOffset, vOffset, blur, colour } = state.shadows;
+	const { enabled, hOffset, vOffset, blur, color } = state.shadows;
 	if (enabled) {
-		return {boxShadow: `${hOffset}px ${vOffset}px ${blur}px ${colour}`}
+		return {boxShadow: `${hOffset}px ${vOffset}px ${blur}px ${color}`}
 	} else {
 		return null
 	}

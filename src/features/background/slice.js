@@ -5,15 +5,15 @@ export const backgroundSlice = createSlice({
 	name: 'background',
 
 	initialState: {
-		colour: '#5d479d',
+		color: '#5d479d',
 		wallpaper: "",
 		tint: 0,
-		tintColour: '#333333',
+		tintColor: '#333333',
 	},
 
 	reducers: {
 		setBackground: (state, input) => {
-			state.colour = input.payload;
+			state.color = input.payload;
 		},
 		setWallpaper: (state, image) => {
 			state.wallpaper = image.payload;
@@ -24,8 +24,8 @@ export const backgroundSlice = createSlice({
 		setTint: (state, input) => {
 			state.tint = input.payload;
 		},
-		setTintColour: (state, input) => {
-			state.tintColour = input.payload;
+		setTintColor: (state, input) => {
+			state.tintColor = input.payload;
 		},
 	},
 });
@@ -35,7 +35,7 @@ export const {
 	setWallpaper,
 	removeWallpaper,
 	setTint,
-	setTintColour,
+	setTintColor,
 } = backgroundSlice.actions;
 
 export const selectBackground = state => state.background;

@@ -24,7 +24,7 @@ export const colorSlice = createSlice({
 	],
 
   reducers: {
-		setColour: (state, value) => {
+		setColor: (state, value) => {
 			state[value.payload.id] = value.payload.color
     },
   },

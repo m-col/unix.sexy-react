@@ -16,7 +16,7 @@ export default function OptBox(props) {
 	return (
 		<div
 			className={className}
-			style={{width: props.width, color: windowContent.textColour}}
+			style={{width: props.width, color: windowContent.textColor}}
 		>
 
 			<h3>{props.label}</h3>

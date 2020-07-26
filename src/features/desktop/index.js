@@ -20,9 +20,9 @@ export default function Desktop() {
 
 	const style = {};
 	if (background.wallpaper) {
-		style.backgroundColor = background.tintColour;
+		style.backgroundColor = background.tintColor;
 	} else {
-		style.backgroundColor = background.colour;
+		style.backgroundColor = background.color;
 	};
 
 	return (

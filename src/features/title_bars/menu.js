@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Colour from 'components/colour';
+import Color from 'components/color';
 import ContextMenu from 'components/context_menu';
 import OptBox from 'components/optbox';
 import Option from 'components/option';
@@ -11,10 +11,10 @@ import { selectContextMenus } from 'features/context_menus/slice';
 import {
 	toggle,
   setPosition,
-	setColour,
-	setTextColour,
-	setColourFocus,
-	setTextColourFocus,
+	setColor,
+	setTextColor,
+	setColorFocus,
+	setTextColorFocus,
 	setWidth,
   selectTitleBars,
 } from './slice';
@@ -63,18 +63,18 @@ export default function Menu(props) {
 				</div>
 
 				<div>
-					Colour
-					<Colour value={style.colour} callback={setColour} />
+					Color
+					<Color value={style.color} callback={setColor} />
 					Text
-					<Colour value={style.textColour} callback={setTextColour} />
+					<Color value={style.textColor} callback={setTextColor} />
 				</div>
 
 				<div>
 					Focussed
-					<Colour value={style.colourFocus} callback={setColourFocus} />
+					<Color value={style.colorFocus} callback={setColorFocus} />
 
 					Text
-					<Colour value={style.textColourFocus} callback={setTextColourFocus} />
+					<Color value={style.textColorFocus} callback={setTextColorFocus} />
 				</div>
 
 			</OptBox>

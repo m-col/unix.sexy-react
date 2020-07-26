@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Button from 'components/button';
 import ContextMenu from 'components/context_menu';
-import Colour from 'components/colour';
+import Color from 'components/color';
 import OptBox from 'components/optbox';
 
 import { selectContextMenus } from 'features/context_menus/slice';
@@ -12,7 +12,7 @@ import {
 	setWallpaper,
 	removeWallpaper,
 	setTint,
-	setTintColour,
+	setTintColor,
 	selectBackground,
 } from './slice';
 
@@ -36,8 +36,8 @@ export default function Menu(props) {
 			<OptBox className="BackgroundCtl" label="Background" width="260px">
 
 				<div>
-					Colour
-					<Colour value={background.colour} callback={setBackground} />
+					Color
+					<Color value={background.color} callback={setBackground} />
 				</div>
 
 				<div>
@@ -71,7 +71,7 @@ export default function Menu(props) {
 					<input value={background.tint} type="number" min={0} max={100}
 						onChange={e => dispatch(setTint(e.target.value))}
 					/>
-					<Colour value={background.tintColour} callback={setTintColour} />
+					<Color value={background.tintColor} callback={setTintColor} />
 				</div>
 
 			</OptBox>

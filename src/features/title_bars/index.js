@@ -21,11 +21,11 @@ export default function TitleBar(props) {
 	};
 
 	if (props.focussed) {
-		style.backgroundColor = titleBars.colourFocus;
-		style.color = titleBars.textColourFocus;
+		style.backgroundColor = titleBars.colorFocus;
+		style.color = titleBars.textColorFocus;
 	} else {
-		style.backgroundColor = titleBars.colour;
-		style.color = titleBars.textColour;
+		style.backgroundColor = titleBars.color;
+		style.color = titleBars.textColor;
 	};
 
 	if (titleBars.position === "E") {

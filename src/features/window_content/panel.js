@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Colour from 'components/colour';
+import Color from 'components/color';
 import OptBox from 'components/optbox';
 
 import {
-	setColour,
-	setTextColour,
+	setColor,
+	setTextColor,
 	setPadding, selectWindowContent
 } from './slice';
 
@@ -19,13 +19,13 @@ export function WindowContentCtl() {
 		<OptBox className="WindowContentCtl" label="Window Content" width="240px">
 
 			<div>
-				Colour
-				<Colour value={windowContent.colour} callback={setColour} />
+				Color
+				<Color value={windowContent.color} callback={setColor} />
 			</div>
 
 			<div>
-				Text colour
-				<Colour value={windowContent.textColour} callback={setTextColour} />
+				Text color
+				<Color value={windowContent.textColor} callback={setTextColor} />
 			</div>
 			
 			<div>

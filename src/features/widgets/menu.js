@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Colour from 'components/colour';
+import Color from 'components/color';
 import ContextMenu from 'components/context_menu';
 import OptBox from 'components/optbox';
 
@@ -36,8 +36,8 @@ export default function Menu(props) {
 
 			<OptBox label="widget">
 				<div>
-					Colour
-					<Colour
+					Color
+					<Color
 						value={style.color}
 						callback={color => setColor({...details, color: color})} 
 					/>
@@ -45,7 +45,7 @@ export default function Menu(props) {
 
 				<div>
 					Background
-					<Colour
+					<Color
 						value={style.backgroundColor}
 						callback={color => setBackgroundColor({...details, color: color})} 
 					/>

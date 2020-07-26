@@ -39,11 +39,11 @@ export const statusBarSlice = createSlice({
     setHeight: (state, value) => {
 			state[value.payload.id].height = value.payload.value;
     },
-    setColour: (state, value) => {
-			state[value.payload.id].backgroundColor = value.payload.colour;
+    setColor: (state, value) => {
+			state[value.payload.id].backgroundColor = value.payload.color;
     },
-    setTextColour: (state, value) => {
-			state[value.payload.id].color = value.payload.colour;
+    setTextColor: (state, value) => {
+			state[value.payload.id].color = value.payload.color;
     },
     setXOffset: (state, value) => {
 			state[value.payload.id].xOffset = value.payload.value;
@@ -64,8 +64,8 @@ export const {
 	toggle,
   setWidth,
   setHeight,
-	setColour,
-	setTextColour,
+	setColor,
+	setTextColor,
 	setXOffset,
 	setYOffset,
 	setCornerRadius,

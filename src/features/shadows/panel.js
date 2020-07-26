@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Colour from 'components/colour';
+import Color from 'components/color';
 import OptBox from 'components/optbox';
 import Switch from 'components/switch';
 import {
@@ -10,7 +10,7 @@ import {
 	setHOffset,
 	setVOffset,
 	setBlur,
-	setColour,
+	setColor,
 } from './slice';
 
 
@@ -25,8 +25,8 @@ export function ShadowCtl() {
 				Enabled
 				<Switch value={style.enabled} callback={toggleShadows} />
 
-				Colour
-				<Colour value={style.colour} callback={setColour} />
+				Color
+				<Color value={style.color} callback={setColor} />
 			</div>
 
 			<div>

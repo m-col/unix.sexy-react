@@ -14,7 +14,7 @@ export default function Button(props) {
 
 			<button
 				onClick={() => dispatch(props.callback())}
-				style={{color: windowContent.textColour, ...props.style}}
+				style={{color: windowContent.textColor, ...props.style}}
 			>
 			{props.text}
 			</button>

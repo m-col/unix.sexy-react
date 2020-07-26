@@ -6,30 +6,30 @@ import 'rc-color-picker/assets/index.css';
 import './index.css';
 
 
-function fixColour(colour) {
-	if (colour.length === 0) {
-		colour = "inherit"
-	} else if (colour[0] !== '#') {
-		colour = '#' + colour
+function fixColor(color) {
+	if (color.length === 0) {
+		color = "inherit"
+	} else if (color[0] !== '#') {
+		color = '#' + color
 	}
-	return colour
+	return color
 }
 
 
-export default function Colour(props) {
+export default function Color(props) {
   const dispatch = useDispatch();
 
 	return (
 		<>
 
 			<input value={props.value}
-				onChange={e => dispatch(props.callback(fixColour(e.target.value)))}
-				className="colour"
+				onChange={e => dispatch(props.callback(fixColor(e.target.value)))}
+				className="color"
 			/>
 
 			<ColorPicker
 				color={props.value}
-				onChange={c => dispatch(props.callback(fixColour(c.color)))}
+				onChange={c => dispatch(props.callback(fixColor(c.color)))}
 				>
 			</ColorPicker>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Colour from 'components/colour';
+import Color from 'components/color';
 import OptBox from 'components/optbox';
 
 import {
@@ -35,13 +35,13 @@ export function BorderCtl() {
 			</div>
 
 			<div>
-				Colour
-				<Colour value={style.borderColor} callback={setBorderColor} />
+				Color
+				<Color value={style.borderColor} callback={setBorderColor} />
 			</div>
 
 			<div>
-				Focussed colour
-				<Colour value={style.borderColorFocus} callback={setBorderColorFocus} />
+				Focussed color
+				<Color value={style.borderColorFocus} callback={setBorderColorFocus} />
 			</div>
 
 		</OptBox>

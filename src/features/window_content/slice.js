@@ -5,21 +5,21 @@ export const windowContentSlice = createSlice({
   name: 'windowContent',
 
 	initialState: {
-		colour: "#030405",
-		textColour: "#c5c5c8",
+		color: "#030405",
+		textColor: "#c5c5c8",
 		padding: 5,
 	},
 
   reducers: {
-		setColour: (state, input) => {
+		setColor: (state, input) => {
 			if (input.payload) {
-				state.colour = input.payload;
+				state.color = input.payload;
 			}
 		},
-		setTextColour: (state, input) => {
-			let colour = input.payload
-			if (colour) {
-				state.textColour = colour;
+		setTextColor: (state, input) => {
+			let color = input.payload
+			if (color) {
+				state.textColor = color;
 			}
 		},
     setPadding: (state, value) => {
@@ -29,18 +29,18 @@ export const windowContentSlice = createSlice({
 });
 
 export const {
-	setColour,
-	setTextColour,
+	setColor,
+	setTextColor,
 	setPadding
 } = windowContentSlice.actions;
 
 export const selectWindowContent = state => state.windowContent;
 
 export const selectWindowContentCSS = state => {
-	const { colour, textColour, padding } = state.windowContent;
+	const { color, textColor, padding } = state.windowContent;
 	return {
-		backgroundColor: colour,
-		color: textColour,
+		backgroundColor: color,
+		color: textColor,
 		padding: `${padding}px`,
 	}
 }

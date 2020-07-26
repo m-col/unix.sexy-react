@@ -7,10 +7,10 @@ export const titleBarSlice = createSlice({
 	initialState: {
 		enabled: true,
 		position: "N",
-		colour: '#252133',
-		textColour: '#8d80d8',
-		colourFocus: '#8d80d8',
-		textColourFocus: '#12101d',
+		color: '#252133',
+		textColor: '#8d80d8',
+		colorFocus: '#8d80d8',
+		textColorFocus: '#12101d',
 		width: 20,
 	},
 
@@ -21,17 +21,17 @@ export const titleBarSlice = createSlice({
     setPosition: (state, value) => {
 			state.position = value.payload
     },
-    setColour: (state, value) => {
-			state.colour = value.payload
+    setColor: (state, value) => {
+			state.color = value.payload
     },
-    setTextColour: (state, value) => {
-			state.textColour = value.payload
+    setTextColor: (state, value) => {
+			state.textColor = value.payload
     },
-    setColourFocus: (state, value) => {
-			state.colourFocus = value.payload
+    setColorFocus: (state, value) => {
+			state.colorFocus = value.payload
     },
-    setTextColourFocus: (state, value) => {
-			state.textColourFocus = value.payload
+    setTextColorFocus: (state, value) => {
+			state.textColorFocus = value.payload
     },
     setWidth: (state, value) => {
 			state.width = value.payload
@@ -42,10 +42,10 @@ export const titleBarSlice = createSlice({
 export const {
 	toggle,
 	setPosition,
-	setColour,
-	setTextColour,
-	setColourFocus,
-	setTextColourFocus,
+	setColor,
+	setTextColor,
+	setColorFocus,
+	setTextColorFocus,
 	setWidth,
 } = titleBarSlice.actions;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Button from 'components/button';
-import Colour from 'components/colour';
+import Color from 'components/color';
 import ContextMenu from 'components/context_menu';
 import OptBox from 'components/optbox';
 import Switch from 'components/switch';
@@ -14,8 +14,8 @@ import {
   setHeight,
 	setXOffset,
 	setYOffset,
-	setColour,
-	setTextColour,
+	setColor,
+	setTextColor,
 	setCornerRadius,
 	toggleShadows,
 	selectStatusBars,
@@ -43,15 +43,15 @@ export default function Menu(props) {
 
 			<OptBox label={`${id} Status Bar`} className="status-bar-menu" width={350}>
 				<div>
-					Colour
-					<Colour
+					Color
+					<Color
 						value={style.backgroundColor}
-						callback={colour => setColour({id: id, colour: colour})} 
+						callback={color => setColor({id: id, color: color})} 
 					/>
 					Text
-					<Colour
+					<Color
 						value={style.color}
-						callback={colour => setTextColour({id: id, colour: colour})} 
+						callback={color => setTextColor({id: id, color: color})} 
 					/>
 				</div>
 
