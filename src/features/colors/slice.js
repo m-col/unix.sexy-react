@@ -6,7 +6,7 @@ export const colorSlice = createSlice({
 
 	initialState: {
 		background: "#030405",
-		foreground: "#8742a5",
+		foreground: "#bcbcbe",
 		color0: "#030405",
 		color1: "#8742a5",
 		color2: "#406794",
@@ -19,7 +19,7 @@ export const colorSlice = createSlice({
 		color9: "#9a5eb3",
 		color10: "#5fd75f",
 		color11: "#6e9fcd",
-		color12: "#bd9ef9",
+		color12: "#252133",
 		color13: "#998dd1",
 		color14: "#9a9dcc",
 		color15: "#e1e1e4",

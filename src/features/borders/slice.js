@@ -7,8 +7,8 @@ export const borderSlice = createSlice({
 	initialState: {
 		borderRadius: 3,
 		borderWidth: 4,
-		borderColor: '#252133',
-		borderColorFocus: '#8d80d8',
+		borderColor: 'var(--color12)',
+		borderColorFocus: 'var(--color13)',
 	},
 
   reducers: {

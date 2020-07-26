@@ -8,7 +8,7 @@ export const backgroundSlice = createSlice({
 		color: '#5d479d',
 		wallpaper: "",
 		tint: 0,
-		tintColor: '#333333',
+		tintColor: 'var(--background)',
 	},
 
 	reducers: {

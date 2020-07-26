@@ -12,7 +12,7 @@ export const widgetSlice = createSlice({
 			left: [
 				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "一" },
 				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "二" },
-				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "三" },
+				{ padding: 10, backgroundColor: "var(--color6)", color: "inherit", content: "三" },
 				{ padding: 10, backgroundColor: "inherit", color: "inherit", content: "四" },
 			],
 			centre: [

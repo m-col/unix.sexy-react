@@ -7,10 +7,10 @@ export const titleBarSlice = createSlice({
 	initialState: {
 		enabled: true,
 		position: "N",
-		color: '#252133',
-		textColor: '#8d80d8',
-		colorFocus: '#8d80d8',
-		textColorFocus: '#12101d',
+		color: 'var(--color12)',
+		textColor: 'var(--color13)',
+		colorFocus: 'var(--color13)',
+		textColorFocus: 'var(--color12)',
 		width: 20,
 	},
 
