@@ -11,6 +11,7 @@ import './index.css';
 // Panel contents
 import { About } from 'features/about/panel';
 import { AlphaCtl } from 'features/alpha/panel';
+import { ColorCtl } from 'features/colors/panel';
 import { ResetCtl } from 'features/reset/panel';
 import { WindowCtl } from 'features/windows/panel';
 import { WindowContentCtl } from 'features/window_content/panel';
@@ -56,6 +57,10 @@ export default function Panel() {
 					<WindowContentCtl />
 					<BorderCtl />
 					<AlphaCtl />
+				</div>
+
+				<div label="Colors">
+					<ColorCtl />
 				</div>
 
 				<div label="Launchers">

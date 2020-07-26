@@ -9,6 +9,6 @@ export default function Colors() {
 	document.head.append(style)
 	style.innerHTML 
 		= "html {"
-		+ colors.map((color, i) => `--color${i}: ${color};`).join("")
+		+ Object.keys(colors).map(key => `--${key}: ${colors[key]};`).join("")
 		+ "}";
 }

@@ -8,8 +8,24 @@ import './index.css';
 
 function fixColor(color) {
 	if (color.length === 0) {
-		color = "inherit"
-	} else if (color[0] !== '#') {
+		return "inherit"
+	};
+
+	if (color.length < 3) {
+		if (color === 'b') {
+			return "var(--background)"
+		};
+
+		if (color === 'f') {
+			return "var(--foreground)"
+		};
+
+		if (/^[0-9]/.test(color)) {
+			return `var(--color${color})`
+		};
+	};
+
+	if (color[0] !== '#') {
 		color = '#' + color
 	}
 	return color
@@ -22,7 +38,7 @@ export default function Color(props) {
 	return (
 		<>
 
-			<input value={props.value}
+			<input value={props.value.length === 7 ? props.value : undefined}
 				onChange={e => dispatch(props.callback(fixColor(e.target.value)))}
 				className="color"
 			/>
